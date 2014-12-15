@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gxt-gwtp-withlayout:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="gxt-gwtp-withlayout-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="gxt-gwtp-withlayout:war exploded" />
+    </root>
+  </artifact>
+</component>

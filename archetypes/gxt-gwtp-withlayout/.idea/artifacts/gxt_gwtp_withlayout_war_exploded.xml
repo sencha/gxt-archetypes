@@ -1,0 +1,37 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="gxt-gwtp-withlayout:war exploded">
+    <output-path>$PROJECT_DIR$/target/gxt-gwtp-withlayout-1.0-SNAPSHOT</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="gxt-gwtp-withlayout/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="gxt-gwtp-withlayout" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.sencha.gxt:gxt:3.0.1" />
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:1.0.0.GA" />
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:sources:1.0.0.GA" />
+          <element id="library" level="project" name="Maven: org.json:json:20090211" />
+          <element id="library" level="project" name="Maven: com.sencha.gxt:gxt-chart:3.0.1" />
+          <element id="library" level="project" name="Maven: com.google.gwt:gwt-user:2.5.1" />
+          <element id="library" level="project" name="Maven: com.gwtplatform:gwtp-mvp-client:1.0" />
+          <element id="library" level="project" name="Maven: com.gwtplatform:gwtp-clients-common:1.0" />
+          <element id="library" level="project" name="Maven: com.google.inject:guice:3.0" />
+          <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.apache.velocity:velocity:1.7" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.1" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.4" />
+          <element id="library" level="project" name="Maven: com.gwtplatform:gwtp-dispatch-client:1.0" />
+          <element id="library" level="project" name="Maven: com.gwtplatform:gwtp-dispatch-shared:1.0" />
+          <element id="library" level="project" name="Maven: com.gwtplatform:gwtp-dispatch-server-guice:1.0" />
+          <element id="library" level="project" name="Maven: com.gwtplatform:gwtp-dispatch-server:1.0" />
+          <element id="library" level="project" name="Maven: com.google.inject.extensions:guice-servlet:3.0" />
+          <element id="library" level="project" name="Maven: com.google.inject.extensions:guice-assistedinject:3.0" />
+          <element id="library" level="project" name="Maven: com.google.gwt.inject:gin:2.0.0" />
+        </element>
+      </element>
+      <element id="gwt-compiler-output" facet="gxt-gwtp-withlayout/gwt/GWT" />
+    </root>
+  </artifact>
+</component>
