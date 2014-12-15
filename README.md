@@ -1,2 +1,2 @@
 #GXT Archetypes
-Create a quick GXT project.
+Create a GXT project quickly.
