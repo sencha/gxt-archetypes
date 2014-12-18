@@ -1,2 +1,0 @@
-serviceClass: com.google.gwt.junit.client.impl.JUnitHost
-path: 3C3AF40565AE21386DE1EFBB7EAFE9BC.gwt.rpc
