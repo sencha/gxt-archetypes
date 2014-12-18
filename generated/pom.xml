@@ -4,14 +4,15 @@
 
 	<parent>
 		<groupId>com.sencha.gxt.archetypes</groupId>
-		<artifactId>archetypes-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<artifactId>gxt-archetypes-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
 	<packaging>pom</packaging>
 	<artifactId>generated</artifactId>
 
 	<modules>
-		
+		<module>gxt-basic-public-3x</module>
+    <module>gxt-basic-support-3x</module>
 	</modules>
 </project>

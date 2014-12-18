@@ -13,8 +13,8 @@ public class RunGenerator {
   
   public void run() {
     List<String> projects = new ArrayList<String>();
-    projects.add("gwt-basic-public-3x");
-    projects.add("gwt-basic-support-3x");
+//    projects.add("gxt-basic-public-3x");
+    projects.add("gxt-basic-support-3x");
 
     GwtArchetypeGenerator generate = new GwtArchetypeGenerator();
     generate.setProjects(projects);
