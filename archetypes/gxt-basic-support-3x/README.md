@@ -1,9 +1,5 @@
 #GXT Basic Archetype
-
 This is a very basic GXT Archetype. 
-
-##Highlights
-* TODO
 
 ##Maven Archetype Usage
 
@@ -15,7 +11,7 @@ This is a very basic GXT Archetype.
 * This project Project.gwt.xml module name is hard coded and will will not be changed from the parameters below at this time.
 
 ```
-mvn archetype:generate -DarchetypeGroupId=com.github.branflake2267.archetypes \
+mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes \
 -DarchetypeRepository=https://oss.sonatype.org/content/repositories/snapshots \
 -DarchetypeArtifactId=gxt-basic-support-3x-archetype \
 -DarchetypeVersion=1.0.0-SNAPSHOT \

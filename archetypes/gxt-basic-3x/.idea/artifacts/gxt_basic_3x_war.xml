@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="gxt-basic-3x:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="gxt-basic-3x-1.0.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="gxt-basic-3x:war exploded" />
-    </root>
-  </artifact>
-</component>
