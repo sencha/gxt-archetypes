@@ -10,16 +10,16 @@
 
     <groupId>com.sencha.gxt.archetypes</groupId>
     <artifactId>gxt-archetypes-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>GXT Archetypes Parent</name>
+    <name>GXT Archetypes</name>
 
-    <url>https://github.com/branflake2267/Archetypes</url>
-    <inceptionYear>2013</inceptionYear>
+    <url>https://github.com/sencha/GXT-Archetypes</url>
+    <inceptionYear>2014</inceptionYear>
 
     <organization>
-        <name>Archetypes</name>
-        <url>https://github.com/branflake2267/Archetypes.git</url>
+        <name>Sencha</name>
+        <url>https://github.com/sencha/GXT-Archetypes.git</url>
     </organization>
 
     <licenses>
@@ -31,33 +31,28 @@
 
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/branflake2267/Archetypes/issues</url>
+        <url>https://github.com/sencha/GXT-Archetypes/issues</url>
     </issueManagement>
 
     <scm>
-        <connection>scm:git:git://github.com/branflake2267/Archetypes.git/</connection>
-        <developerConnection>scm:git:git@github.com:branflake2267/Archetypes.git</developerConnection>
-        <url>https://github.com/branflake2267/Archetypes.git</url>
+        <connection>scm:git:git://github.com/Sencha/GXT-Archetypes.git/</connection>
+        <developerConnection>scm:git:git@github.com:Sencha/GXT-Archetypes.git</developerConnection>
+        <url>https://github.com/sencha/GXT-Archetypes.git</url>
     </scm>
 
     <developers>
         <developer>
             <id>branflake2267</id>
             <name>Brandon Donnelson</name>
-            <email>branflake2267@gmail.com</email>
-            <organization>Gone Vertical LLC</organization>
-            <organizationUrl>http://gonevertical.com</organizationUrl>
+            <email>brandon.donnelson@sencha.com</email>
+            <organization>Sencha</organization>
+            <organizationUrl>http://sencha.com</organizationUrl>
             <roles>
-                <role>Lead Developer</role>
+                <role>GXT Support Engineer</role>
             </roles>
             <timezone>-8</timezone>
         </developer>
     </developers>
-
-    <ciManagement>
-        <system>Team City</system>
-        <url>http://teamcity.gonevertical.org/project.html?projectId=project9</url>
-    </ciManagement>
 
     <modules>
         <module>generated</module>
