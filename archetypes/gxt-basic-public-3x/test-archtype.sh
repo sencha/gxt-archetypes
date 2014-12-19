@@ -8,7 +8,7 @@ cd target/test
 
 mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes \
 -DarchetypeRepository=https://oss.sonatype.org/content/repositories/snapshots \
--DarchetypeArtifactId=gxt-basic-public-3x-archetype \
+-DarchetypeArtifactId=gxt-theme-31x-archetype \
 -DarchetypeVersion=1.0-SNAPSHOT \
 -DgroupId=com.projectname.project \
 -DartifactId=new-project-name \
