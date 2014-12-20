@@ -114,7 +114,6 @@
       <groupId>${project.groupId}</groupId>
       <artifactId>basic-theme</artifactId>
       <version>${project.version}</version>
-      <!-- <classifier>generatedtheme</classifier> -->
       <scope>provided</scope>
     </dependency>
 
