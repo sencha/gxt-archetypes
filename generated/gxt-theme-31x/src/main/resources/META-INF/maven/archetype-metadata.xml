@@ -7,14 +7,27 @@
         <include>.project</include>
       </includes>
     </fileSet>
+    
   </fileSets>
   <modules>
     <module dir="theme" id="${rootArtifactId}-theme" name="${rootArtifactId}-theme">
       <fileSets>
-        <fileSet encoding="UTF-8">
+        <fileSet encoding="UTF-8" filtered="true" packaged="true">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true">
           <directory>src/main/resources</directory>
           <includes>
             <include>**/*.theme</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true" packaged="true">
+          <directory>src/test/java</directory>
+          <includes>
+            <include>**/*.java</include>
           </includes>
         </fileSet>
         
@@ -44,7 +57,10 @@
           <directory>src/main/webapp</directory>
           <includes>
             <include>**/*.MF</include>
+            <include>**/*.png</include>
+            <include>**/*.js</include>
             <include>**/*.css</include>
+            <include>**/*.gif</include>
           </includes>
         </fileSet>
         <fileSet encoding="UTF-8" filtered="true" packaged="true">

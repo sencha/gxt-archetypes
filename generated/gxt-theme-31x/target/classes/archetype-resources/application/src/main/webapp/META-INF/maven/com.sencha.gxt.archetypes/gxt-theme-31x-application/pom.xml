@@ -117,7 +117,6 @@
       <groupId>${symbol_dollar}{project.groupId}</groupId>
       <artifactId>${parentArtifactId}-theme</artifactId>
       <version>${symbol_dollar}{project.version}</version>
-      <!-- <classifier>generatedtheme</classifier> -->
       <scope>provided</scope>
     </dependency>
 
