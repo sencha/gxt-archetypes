@@ -6,7 +6,7 @@
   <artifactId>${artifactId}</artifactId>
   <packaging>war</packaging>
   <version>${version}</version>
-  <name>gwt-basic-public-3x</name>
+  <name>gxt-basic-public-3x</name>
   <description>Very basic GXT maven setup</description>
 
   <properties>
