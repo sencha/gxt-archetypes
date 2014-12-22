@@ -13,6 +13,7 @@
 
 	<modules>
 		<module>gxt-basic-public-3x</module>
-    <module>gxt-basic-support-3x</module>
+    	<module>gxt-basic-support-3x</module>
+    	<module>gxt-theme-31x</module>
 	</modules>
 </project>
