@@ -2,11 +2,13 @@ package tld.domain.project.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.sencha.gxt.core.client.GXT;
-import com.sencha.gxt.widget.core.client.box.MessageBox;
-import com.sencha.gxt.widget.core.client.button.TextButton;
-import com.sencha.gxt.widget.core.client.event.SelectEvent;
-import com.sencha.gxt.widget.core.client.event.SelectEvent.SelectHandler;
+import com.sencha.gxt.cell.core.client.form.ComboBoxCell.TriggerAction;
+import com.sencha.gxt.widget.core.client.ContentPanel;
+import com.sencha.gxt.widget.core.client.container.CssFloatLayoutContainer;
+import com.sencha.gxt.widget.core.client.container.CssFloatLayoutContainer.CssFloatData;
+import com.sencha.gxt.widget.core.client.container.MarginData;
+import com.sencha.gxt.widget.core.client.form.FieldLabel;
+import com.sencha.gxt.widget.core.client.form.StringComboBox;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -15,16 +17,21 @@ public class ProjectEntryPoint implements EntryPoint {
 
   @Override
   public void onModuleLoad() {
-    String version = GXT.getVersion().getRelease();
-    TextButton textButton = new TextButton("Verify GXT Works: Version=" + version);
-    RootPanel.get().add(textButton);
-    textButton.addSelectHandler(new SelectHandler() {
-      @Override
-      public void onSelect(SelectEvent event) {
-        MessageBox messageBox = new MessageBox("GXT Works.");
-        messageBox.show();
-      }
-    });
+    StringComboBox combo = new StringComboBox();
+    combo.setTriggerAction(TriggerAction.ALL);
+    combo.add("Yes");
+    combo.add("No");
+    combo.add("Both");
+    
+    FieldLabel choose = new FieldLabel(combo, "Select");
+    
+    CssFloatLayoutContainer verticallayout = new CssFloatLayoutContainer();
+    verticallayout.add(choose, new CssFloatData(1));
+
+    ContentPanel contentPanel = new ContentPanel();
+    contentPanel.setPixelSize(300, 400);
+    contentPanel.add(verticallayout, new MarginData(20));
+
+    RootPanel.get().add(contentPanel);
   }
-  
 }

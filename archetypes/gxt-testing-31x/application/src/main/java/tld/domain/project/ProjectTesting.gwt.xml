@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN"
+  "http://gwtproject.org/doctype/2.7.0/gwt-module.dtd">
+<module rename-to='project'>
+  <inherits name='tld.domain.project.Project' />
+
+  <!-- Used with the GXT-Driver integration testing -->
+  <inherits name="org.senchalabs.gwt.gwtdriver.gxt.TestableGXT" />
+  
+</module>
