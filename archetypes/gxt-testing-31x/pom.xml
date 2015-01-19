@@ -23,8 +23,8 @@
   </properties>
 
   <modules>
-    <module>theme</module>
     <module>application</module>
+    <module>testing</module>
   </modules>
 
   <build>
