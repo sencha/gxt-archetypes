@@ -4,7 +4,7 @@
 
   <groupId>com.sencha.gxt.archetypes</groupId>
   <artifactId>gxt-archetypes-generator</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>GXT Archetypes Generator</name>
 
@@ -49,7 +49,7 @@
     <dependency>
       <groupId>com.github.branflake2267.archetypes</groupId>
       <artifactId>archetype-generator</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>1.0.0-SNAPSHOT</version>
     </dependency>
 
     <!-- Java exec requires -->
