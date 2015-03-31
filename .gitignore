@@ -1,0 +1,15 @@
+.settings**
+*.iml
+*.project
+.idea**
+target**
+.gwt-log
+.classpath
+www-test**
+gwt-unitCache**
+bin**
+.factorypath
+.apt_generated
+chromedriver.log
+.DS_Store
+war

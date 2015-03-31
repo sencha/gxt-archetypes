@@ -5,13 +5,13 @@
 
   <parent>
     <groupId>com.sencha.gxt.archetypes</groupId>
-    <artifactId>gxt-theme-31x</artifactId>
+    <artifactId>gxt-theme-40x</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>gxt-theme-31x-theme</artifactId>
+  <artifactId>gxt-theme-40x-theme</artifactId>
   <packaging>jar</packaging>
-  <name>gxt-theme-31x Theme</name>
+  <name>gxt-theme-40x Theme</name>
   <description>GXT Application Theme</description>
 
   <properties>
@@ -30,9 +30,6 @@
       </resource>
       <resource>
         <directory>${theme.gen.directory}</directory>
-        <includes>
-          <include>index.java</include>
-        </includes>
       </resource>
     </resources>
     <plugins>
@@ -85,6 +82,8 @@
                 <argument>${project.build.directory}/war</argument>
                 <argument>-imagePath</argument>
                 <argument>${project.basedir}/src/main/files/icons</argument>
+                <argument>-sourcesOnly</argument>
+                <argument>true</argument>
                 <argument>${project.basedir}/src/main/resources/custom.theme</argument>
               </arguments>
               <systemProperties>
@@ -304,5 +303,4 @@
       </properties>
     </profile>
   </profiles>
-
 </project>
