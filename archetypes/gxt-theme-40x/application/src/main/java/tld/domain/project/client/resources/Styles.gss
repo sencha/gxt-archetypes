@@ -1,0 +1,9 @@
+.buttonColorBrown > div {
+	background: none !important;
+	background-color: brown !important;
+}
+
+.buttonColorDeepPink > div {
+	background: none !important;
+	background-color: DeepPink !important;
+}

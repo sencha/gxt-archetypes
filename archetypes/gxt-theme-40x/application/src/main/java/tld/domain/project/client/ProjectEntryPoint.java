@@ -5,18 +5,13 @@ import tld.domain.project.client.base.button.Css3ButtonCellAppearance.Css3Button
 import tld.domain.project.client.base.button.Css3ButtonCellAppearance.Css3ButtonStyle;
 import tld.domain.project.client.customappearances.ButtonResources.Css3ButtonResourcesGreen;
 import tld.domain.project.client.customappearances.ButtonResources.Css3ButtonResourcesRed;
-import tld.domain.project.client.customappearances.ButtonResources.SlicedButtonResourcesGreen;
-import tld.domain.project.client.customappearances.ButtonResources.SlicedButtonResourcesRed;
-import tld.domain.project.client.customappearances.ThemePropertyUtils;
-import tld.domain.project.client.sliced.button.SlicedButtonCellAppearance;
-import tld.domain.project.client.sliced.button.SlicedButtonCellAppearance.SlicedButtonCellResources;
+import tld.domain.project.client.resources.Resources;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.dom.client.StyleInjector;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
-import com.sencha.gxt.cell.core.client.ButtonCell.ButtonCellAppearance;
 import com.sencha.gxt.cell.core.client.TextButtonCell;
 import com.sencha.gxt.core.client.GXT;
 import com.sencha.gxt.widget.core.client.box.MessageBox;
@@ -39,17 +34,18 @@ public class ProjectEntryPoint implements EntryPoint {
 
     // Brittle
     RootPanel.get().add(getButtonWithStyle());
+
+    // Less Brittle
+    RootPanel.get().add(getButtonWithStyle2());
+
+    // Less Brittle
+    RootPanel.get().add(getButtonWithStyle3());
   }
 
   private TextButton getRedButton() {
-    ButtonCellAppearance<String> appearance = null;
-    if (ThemePropertyUtils.themeSettings().isCss3Enabled()) {
-      Css3ButtonResources resources = GWT.create(Css3ButtonResourcesRed.class);
-      appearance = new Css3ButtonCellAppearance<String>(resources);
-    } else {
-      SlicedButtonCellResources resources = GWT.create(SlicedButtonResourcesRed.class);
-      appearance = new SlicedButtonCellAppearance<String>(resources);
-    }
+    Css3ButtonResources resources = GWT.create(Css3ButtonResourcesRed.class);
+    Css3ButtonCellAppearance<String> appearance = new Css3ButtonCellAppearance<String>(resources);
+
     TextButtonCell cell = new TextButtonCell(appearance);
     TextButton button = new TextButton(cell, "Red Button");
 
@@ -57,14 +53,9 @@ public class ProjectEntryPoint implements EntryPoint {
   }
 
   private TextButton getGreenButton() {
-    ButtonCellAppearance<String> appearance = null;
-    if (ThemePropertyUtils.themeSettings().isCss3Enabled()) {
-      Css3ButtonResources resources = GWT.create(Css3ButtonResourcesGreen.class);
-      appearance = new Css3ButtonCellAppearance<String>(resources);
-    } else {
-      SlicedButtonCellResources resources = GWT.create(SlicedButtonResourcesGreen.class);
-      appearance = new SlicedButtonCellAppearance<String>(resources);
-    }
+    Css3ButtonResources resources = GWT.create(Css3ButtonResourcesGreen.class);
+    Css3ButtonCellAppearance<String> appearance = new Css3ButtonCellAppearance<String>(resources);
+
     TextButtonCell cell = new TextButtonCell(appearance);
     TextButton button = new TextButton(cell, "Green Button");
 
@@ -72,15 +63,15 @@ public class ProjectEntryPoint implements EntryPoint {
   }
 
   /**
-   * This is brittle. Not suggested.
+   * This is brittle, because a cell DOM change on sdk upgrade may break it.
    */
   private Widget getButtonWithStyle() {
-    TextButton button = new TextButton("Button with Color");
-    button.addStyleName("customColor");
+    TextButton button = new TextButton("Orange Button");
+    button.addStyleName("customColor1");
 
     Css3ButtonStyle styles = getStyles((Css3ButtonCellAppearance<String>) button.getCell().getAppearance());
 
-    StyleInjector.inject(".customColor ." + styles.button()
+    StyleInjector.inject(".customColor1 ." + styles.button()
         + " { background: none !important; background-color: orange !important;  };", true);
 
     return button;
@@ -89,6 +80,34 @@ public class ProjectEntryPoint implements EntryPoint {
   public native Css3ButtonStyle getStyles(Css3ButtonCellAppearance<String> appearance) /*-{
 		return appearance.@tld.domain.project.client.base.button.Css3ButtonCellAppearance::style;
   }-*/;
+
+  /**
+   * This is less brittle, because a cell DOM change on sdk upgrade may break
+   * it.
+   */
+  private Widget getButtonWithStyle2() {
+    StyleInjector.inject(".customColor2 > div { background: none !important; background-color: purple !important;  };",
+        true);
+
+    TextButton button = new TextButton("Purple Button");
+    button.addStyleName("customColor2");
+
+    return button;
+  }
+
+  /**
+   * This is less brittle, because a cell DOM change on sdk upgrade may break
+   * it.
+   */
+  private Widget getButtonWithStyle3() {
+    // only do this on first load
+    Resources.INSTANCE.style().ensureInjected();
+    
+    TextButton button = new TextButton("Pink Button");
+    button.addStyleName(Resources.INSTANCE.style().buttonColorDeepPink());
+
+    return button;
+  }
 
   private TextButton getVersionButton() {
     String version = GXT.getVersion().getRelease();
