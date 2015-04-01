@@ -1,14 +1,15 @@
 package tld.domain.project.client;
 
+import tld.domain.project.client.appearances.ButtonResources.Css3ButtonResourcesGreen;
+import tld.domain.project.client.appearances.ButtonResources.Css3ButtonResourcesRed;
 import tld.domain.project.client.base.button.Css3ButtonCellAppearance;
 import tld.domain.project.client.base.button.Css3ButtonCellAppearance.Css3ButtonResources;
 import tld.domain.project.client.base.button.Css3ButtonCellAppearance.Css3ButtonStyle;
-import tld.domain.project.client.customappearances.ButtonResources.Css3ButtonResourcesGreen;
-import tld.domain.project.client.customappearances.ButtonResources.Css3ButtonResourcesRed;
 import tld.domain.project.client.resources.Resources;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.shared.GWT;
+import com.google.gwt.dom.client.InputElement;
 import com.google.gwt.dom.client.StyleInjector;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -18,6 +19,7 @@ import com.sencha.gxt.widget.core.client.box.MessageBox;
 import com.sencha.gxt.widget.core.client.button.TextButton;
 import com.sencha.gxt.widget.core.client.event.SelectEvent;
 import com.sencha.gxt.widget.core.client.event.SelectEvent.SelectHandler;
+import com.sencha.gxt.widget.core.client.form.TextField;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -32,14 +34,13 @@ public class ProjectEntryPoint implements EntryPoint {
     RootPanel.get().add(getRedButton());
     RootPanel.get().add(getGreenButton());
 
-    // Brittle
-    RootPanel.get().add(getButtonWithStyle());
-
-    // Less Brittle
+    // Using style injection
+    // RootPanel.get().add(getButtonWithStyle());
     RootPanel.get().add(getButtonWithStyle2());
-
-    // Less Brittle
     RootPanel.get().add(getButtonWithStyle3());
+
+    // Using dom query
+    RootPanel.get().add(getTextFieldWithDomQuery());
   }
 
   private TextButton getRedButton() {
@@ -62,20 +63,20 @@ public class ProjectEntryPoint implements EntryPoint {
     return button;
   }
 
-  /**
+   /**
    * This is brittle, because a cell DOM change on sdk upgrade may break it.
    */
-  private Widget getButtonWithStyle() {
-    TextButton button = new TextButton("Orange Button");
-    button.addStyleName("customColor1");
-
-    Css3ButtonStyle styles = getStyles((Css3ButtonCellAppearance<String>) button.getCell().getAppearance());
-
-    StyleInjector.inject(".customColor1 ." + styles.button()
-        + " { background: none !important; background-color: orange !important;  };", true);
-
-    return button;
-  }
+   private Widget getButtonWithStyle() {
+   TextButton button = new TextButton("Orange Button");
+   button.addStyleName("customColor1");
+  
+   Css3ButtonStyle styles = getStyles((Css3ButtonCellAppearance<String>)
+   button.getCell().getAppearance());
+  
+   StyleInjector.inject(".customColor1 ." + styles.button()+ " { background: none !important; background-color: orange !important;  };", true);
+  
+   return button;
+   }
 
   public native Css3ButtonStyle getStyles(Css3ButtonCellAppearance<String> appearance) /*-{
 		return appearance.@tld.domain.project.client.base.button.Css3ButtonCellAppearance::style;
@@ -102,11 +103,22 @@ public class ProjectEntryPoint implements EntryPoint {
   private Widget getButtonWithStyle3() {
     // only do this on first load
     Resources.INSTANCE.style().ensureInjected();
-    
+
     TextButton button = new TextButton("Pink Button");
     button.addStyleName(Resources.INSTANCE.style().buttonColorDeepPink());
 
     return button;
+  }
+
+  private Widget getTextFieldWithDomQuery() {
+    TextField textField = new TextField();
+
+    InputElement inputElement = textField.getElement().select("input").getItem(0).cast();
+    inputElement.getStyle().setBackgroundColor("red");
+    // or
+    textField.getElement().select("input").getItem(0).getStyle().setBackgroundColor("blue");
+
+    return textField;
   }
 
   private TextButton getVersionButton() {
