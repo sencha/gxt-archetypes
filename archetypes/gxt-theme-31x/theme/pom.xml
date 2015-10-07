@@ -30,7 +30,8 @@
     </resources>
 
     <plugins>
-      <plugin>
+      <!-- Option for downloadin PhatomJs -->
+      <!-- <plugin>
         <groupId>com.googlecode.maven-download-plugin</groupId>
         <artifactId>maven-download-plugin</artifactId>
         <version>1.1.0</version>
@@ -50,7 +51,36 @@
         <configuration>
           <unpack>true</unpack>
         </configuration>
+      </plugin> -->
+      <!-- Download phantomjs for the platoform for building the theme -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-scripts</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/phantomjs</outputDirectory>
+              <stripVersion>true</stripVersion>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.github.klieber</groupId>
+                  <artifactId>phantomjs</artifactId>
+                  <version>1.9.2</version>
+                  <classifier>${platform}</classifier>
+                  <overWrite>true</overWrite>
+                  <type>zip</type>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
+      
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
