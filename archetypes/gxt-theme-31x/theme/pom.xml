@@ -30,28 +30,6 @@
     </resources>
 
     <plugins>
-      <!-- Option for downloadin PhatomJs -->
-      <!-- <plugin>
-        <groupId>com.googlecode.maven-download-plugin</groupId>
-        <artifactId>maven-download-plugin</artifactId>
-        <version>1.1.0</version>
-        <executions>
-          <execution>
-            <id>download-phantomjs-windows</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>https://phantomjs.googlecode.com/files/phantomjs-${phantomjs.version}-${platform}${archive}</url>
-              <outputDirectory>${project.build.directory}/phantomjs</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-        <configuration>
-          <unpack>true</unpack>
-        </configuration>
-      </plugin> -->
       <!-- Download phantomjs for the platoform for building the theme -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
