@@ -10,7 +10,7 @@
 
   <artifactId>${artifactId}</artifactId>
   <packaging>jar</packaging>
-  <name>gxt-theme-31x Theme</name>
+  <name>${parentArtifactId} Theme</name>
   <description>GXT Application Theme</description>
 
   <properties>
@@ -29,27 +29,35 @@
     </resources>
 
     <plugins>
+      <!-- Download phantomjs for the platoform for building the theme -->
       <plugin>
-        <groupId>com.googlecode.maven-download-plugin</groupId>
-        <artifactId>maven-download-plugin</artifactId>
-        <version>1.1.0</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
-            <id>download-phantomjs-windows</id>
-            <phase>generate-resources</phase>
+            <id>copy-scripts</id>
+            <phase>generate-sources</phase>
             <goals>
-              <goal>wget</goal>
+              <goal>unpack</goal>
             </goals>
             <configuration>
-              <url>https://phantomjs.googlecode.com/files/phantomjs-${phantomjs.version}-${platform}${archive}</url>
               <outputDirectory>${project.build.directory}/phantomjs</outputDirectory>
+              <stripVersion>true</stripVersion>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.github.klieber</groupId>
+                  <artifactId>phantomjs</artifactId>
+                  <version>1.9.2</version>
+                  <classifier>${platform}</classifier>
+                  <overWrite>true</overWrite>
+                  <type>zip</type>
+                </artifactItem>
+              </artifactItems>
             </configuration>
           </execution>
         </executions>
-        <configuration>
-          <unpack>true</unpack>
-        </configuration>
       </plugin>
+      
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
@@ -238,35 +246,5 @@
       </properties>
     </profile>
   </profiles>
-
-  <!-- Maven Exec, it uses the theme builder -->
-  <pluginRepositories>
-    <pluginRepository>
-      <!-- http://docs.sencha.com/gxt/3.1/getting_started/maven/Maven.html -->
-      <!-- ~/.m2/settings.xml add <server/> with the support portal credentials -->
-      <id>sencha-gxt-repository</id>
-      <name>Sencha GXT Repository</name>
-
-      <!-- Commercial (with Support) -->
-      <!-- <url>https://maven.sencha.com/repo/gxt-commercial-release</url> -->
-      <url>https://maven.sencha.com/repo/gxt-support-commercial-release</url>
-      <!-- <url>https://maven.sencha.com/repo/gxt-commercial-snapshot</url> -->
-
-      <!-- GPL -->
-      <!-- <url>https://maven.sencha.com/repo/gxt-gpl-release</url> -->
-      <!-- <url>https://maven.sencha.com/repo/gxt-gpl-snapshot</url> -->
-
-      <!-- GPL with Support -->
-      <!-- <url>https://maven.sencha.com/repo/gxt-support-gpl-release</url> -->
-
-      <layout>default</layout>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-    </pluginRepository>
-  </pluginRepositories>
 
 </project>
