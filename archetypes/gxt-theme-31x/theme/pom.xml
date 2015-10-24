@@ -15,6 +15,8 @@
   <description>GXT Application Theme</description>
 
   <properties>
+    <theme.gen.directory>${project.basedir}/target/theme-gen</theme.gen.directory>
+
     <phantomjs.version>1.9.2</phantomjs.version>
     <bin>bin/phantomjs</bin>
   </properties>
@@ -24,8 +26,13 @@
       <resource>
         <directory>src/main/java</directory>
       </resource>
+      <!-- Theme config -->
       <resource>
         <directory>src/main/resources</directory>
+      </resource>
+      <!-- Theme file resources, icons -->
+      <resource>
+        <directory>src/main/files</directory>
       </resource>
     </resources>
 
@@ -58,10 +65,11 @@
           </execution>
         </executions>
       </plugin>
-      
+
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
+        <version>1.4.0</version>
         <executions>
           <!-- If you see an error in eclipse on this next line "An exception occurred while executing the Java class. null", 
             this indicates that there was a problem generating Neptune from the config file. Run from the command line to get the full 
@@ -76,13 +84,15 @@
               <mainClass>com.sencha.gxt.themebuilder.ThemeBuilder</mainClass>
               <arguments>
                 <argument>-gen</argument>
-                <argument>${project.build.directory}/classes</argument>
+                <argument>${theme.gen.directory}</argument>
                 <argument>-imageFile</argument>
                 <argument>${project.build.directory}/snapshot.png</argument>
                 <argument>-manifestFile</argument>
                 <argument>${project.build.directory}/snapshot.json</argument>
                 <argument>-out</argument>
                 <argument>${project.build.directory}/${project.build.finalName}-generatedtheme.jar</argument>
+                <argument>-imagePath</argument>
+                <argument>${project.basedir}/src/main/files/icons</argument>
                 <argument>-warDir</argument>
                 <argument>${project.build.directory}/war</argument>
                 <argument>${project.basedir}/src/main/resources/custom.theme</argument>
@@ -94,10 +104,11 @@
                 </systemProperty>
               </systemProperties>
               <includePluginDependencies>true</includePluginDependencies>
+              <!-- Ignore themebuilder thread exception -->
+              <cleanupDaemonThreads>false</cleanupDaemonThreads>
             </configuration>
           </execution>
         </executions>
-
         <!-- Include a repository when using support releases -->
         <dependencies>
           <dependency>
@@ -107,12 +118,31 @@
           </dependency>
         </dependencies>
       </plugin>
+
+      <!-- Add teh target/theme-gen to be included as a sourcepath -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.9.1</version>
+        <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${theme.gen.directory}</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
 
     <pluginManagement>
       <plugins>
-        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build 
-          itself. -->
+        <!-- Eclipse controls Maven execution directions -->
         <plugin>
           <groupId>org.eclipse.m2e</groupId>
           <artifactId>lifecycle-mapping</artifactId>
@@ -120,36 +150,42 @@
           <configuration>
             <lifecycleMappingMetadata>
               <pluginExecutions>
+                <!-- Unpack phantomjs zip into target -->
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>com.googlecode.maven-download-plugin</groupId>
-                    <artifactId>maven-download-plugin</artifactId>
-                    <versionRange>[1.1.0,)</versionRange>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <versionRange>[2.8,)</versionRange>
                     <goals>
-                      <goal>wget</goal>
+                      <goal>unpack</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
                     <execute>
-                      <runOnConfiguration>true</runOnConfiguration>
+                      <!-- Run on workspace build -->
+                      <runOnConfiguration>false</runOnConfiguration>
                     </execute>
                   </action>
                 </pluginExecution>
-                <!-- m2e build theme -->
-                <!-- <pluginExecution> <pluginExecutionFilter> <groupId>org.codehaus.mojo</groupId> <artifactId>exec-maven-plugin</artifactId> 
-                  <versionRange>[1.2.1,)</versionRange> <goals> <goal>java</goal> </goals> </pluginExecutionFilter> <action> <execute> <runOnIncremental>true</runOnIncremental> 
-                  </execute> </action> </pluginExecution> -->
+
+                <!-- Theme build execution controls -->
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-enforcer-plugin</artifactId>
-                    <versionRange>[1.0.0,)</versionRange>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <versionRange>[1.4.0,)</versionRange>
                     <goals>
-                      <goal>enforce</goal>
+                      <goal>java</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <!-- https://wiki.eclipse.org/M2E_compatible_maven_plugins -->
+                    <execute>
+                      <!-- run on maven update -->
+                      <runOnConfiguration>true</runOnConfiguration>
+                      <!-- run on workspace build -->
+                      <!-- <runOnIncremental>false</runOnIncremental> -->
+                    </execute>
                   </action>
                 </pluginExecution>
               </pluginExecutions>
@@ -159,6 +195,14 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.sencha.gxt</groupId>
+      <artifactId>gxt-themebuilder</artifactId>
+      <version>${gxt.version}</version>
+    </dependency>
+  </dependencies>
 
   <profiles>
     <profile>
