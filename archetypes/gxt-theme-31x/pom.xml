@@ -12,7 +12,7 @@
 
   <properties>
     <!-- GXT -->
-    <gxt.version>3.1.2</gxt.version>
+    <gxt.version>3.1.4</gxt.version>
 
     <!-- GWT -->
     <gwt.version>2.7.0</gwt.version>

@@ -25,9 +25,10 @@ public class RunGenerator {
 
   public void run() {
     List<String> projects = new ArrayList<String>();
-    projects.add("gxt-basic-public-3x");
-    projects.add("gxt-basic-support-3x");
+    //projects.add("gxt-basic-public-3x");
+    //projects.add("gxt-basic-support-3x");
     projects.add("gxt-theme-31x");
+    //projects.add("gxt-theme-40x");
 
     GwtArchetypeGenerator generate = new GwtArchetypeGeneratorExt();
     generate.setProjects(projects);

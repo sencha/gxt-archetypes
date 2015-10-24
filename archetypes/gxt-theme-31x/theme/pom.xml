@@ -17,46 +17,48 @@
   <properties>
     <phantomjs.version>1.9.2</phantomjs.version>
     <bin>bin/phantomjs</bin>
-    <theme.gen.directory>${project.basedir}/target/theme-gen</theme.gen.directory>
   </properties>
 
   <build>
     <resources>
       <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-      <resource>
         <directory>src/main/java</directory>
       </resource>
       <resource>
-        <directory>${theme.gen.directory}</directory>
-        <includes>
-          <include>index.java</include>
-        </includes>
+        <directory>src/main/resources</directory>
       </resource>
     </resources>
+
     <plugins>
+      <!-- Download phantomjs for the platoform for building the theme -->
       <plugin>
-        <groupId>com.googlecode.maven-download-plugin</groupId>
-        <artifactId>maven-download-plugin</artifactId>
-        <version>1.1.0</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
-            <id>download-phantomjs-windows</id>
+            <id>copy-scripts</id>
             <phase>generate-sources</phase>
             <goals>
-              <goal>wget</goal>
+              <goal>unpack</goal>
             </goals>
             <configuration>
-              <url>https://phantomjs.googlecode.com/files/phantomjs-${phantomjs.version}-${platform}${archive}</url>
               <outputDirectory>${project.build.directory}/phantomjs</outputDirectory>
+              <stripVersion>true</stripVersion>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.github.klieber</groupId>
+                  <artifactId>phantomjs</artifactId>
+                  <version>1.9.2</version>
+                  <classifier>${platform}</classifier>
+                  <overWrite>true</overWrite>
+                  <type>zip</type>
+                </artifactItem>
+              </artifactItems>
             </configuration>
           </execution>
         </executions>
-        <configuration>
-          <unpack>true</unpack>
-        </configuration>
       </plugin>
+      
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
@@ -66,7 +68,7 @@
             error, and on fixing it the error should go away, though a clean may also be required -->
           <execution>
             <id>generate-theme</id>
-            <phase>process-sources</phase>
+            <phase>prepare-package</phase>
             <goals>
               <goal>java</goal>
             </goals>
@@ -74,17 +76,15 @@
               <mainClass>com.sencha.gxt.themebuilder.ThemeBuilder</mainClass>
               <arguments>
                 <argument>-gen</argument>
-                <argument>${theme.gen.directory}</argument>
+                <argument>${project.build.directory}/classes</argument>
                 <argument>-imageFile</argument>
                 <argument>${project.build.directory}/snapshot.png</argument>
                 <argument>-manifestFile</argument>
                 <argument>${project.build.directory}/snapshot.json</argument>
                 <argument>-out</argument>
-                <argument>${project.build.directory}/custom-${project.version}.jar</argument>
+                <argument>${project.build.directory}/${project.build.finalName}-generatedtheme.jar</argument>
                 <argument>-warDir</argument>
                 <argument>${project.build.directory}/war</argument>
-                <argument>-imagePath</argument>
-                <argument>${project.basedir}/src/main/files/icons</argument>
                 <argument>${project.basedir}/src/main/resources/custom.theme</argument>
               </arguments>
               <systemProperties>
@@ -97,6 +97,8 @@
             </configuration>
           </execution>
         </executions>
+
+        <!-- Include a repository when using support releases -->
         <dependencies>
           <dependency>
             <groupId>com.sencha.gxt</groupId>
@@ -105,34 +107,8 @@
           </dependency>
         </dependencies>
       </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>1.9.1</version>
-        <executions>
-          <execution>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-              <goal>add-resource</goal>
-            </goals>
-            <configuration>
-              <resources>
-                <resource>
-                  <directory>${theme.gen.directory}</directory>
-                  <includes>
-                    <include>*</include>
-                  </includes>
-                </resource>
-              </resources>
-              <sources>
-                <source>${theme.gen.directory}</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
+
     <pluginManagement>
       <plugins>
         <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build 
@@ -159,21 +135,10 @@
                     </execute>
                   </action>
                 </pluginExecution>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>exec-maven-plugin</artifactId>
-                    <versionRange>[1.2.1,)</versionRange>
-                    <goals>
-                      <goal>java</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <execute>
-                      <runOnIncremental>false</runOnIncremental>
-                    </execute>
-                  </action>
-                </pluginExecution>
+                <!-- m2e build theme -->
+                <!-- <pluginExecution> <pluginExecutionFilter> <groupId>org.codehaus.mojo</groupId> <artifactId>exec-maven-plugin</artifactId> 
+                  <versionRange>[1.2.1,)</versionRange> <goals> <goal>java</goal> </goals> </pluginExecutionFilter> <action> <execute> <runOnIncremental>true</runOnIncremental> 
+                  </execute> </action> </pluginExecution> -->
                 <pluginExecution>
                   <pluginExecutionFilter>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -194,27 +159,6 @@
       </plugins>
     </pluginManagement>
   </build>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.google.gwt</groupId>
-      <artifactId>gwt-user</artifactId>
-      <version>${gwt.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.sencha.gxt</groupId>
-      <artifactId>gxt</artifactId>
-      <version>${gxt.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.sencha.gxt</groupId>
-      <artifactId>gxt-themebuilder</artifactId>
-      <version>${gxt.version}</version>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
 
   <profiles>
     <profile>
