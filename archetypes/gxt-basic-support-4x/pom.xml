@@ -4,15 +4,15 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.sencha.gxt.archetypes</groupId>
-  <artifactId>gxt-basic-support-3x</artifactId>
+  <artifactId>gxt-basic-support-4x</artifactId>
   <packaging>war</packaging>
   <version>1.0.0-SNAPSHOT</version>
-  <name>gxt-basic-support-3x</name>
+  <name>gxt-basic-support-4x</name>
   <description>Very basic GXT maven setup</description>
 
   <properties>
     <!-- GXT -->
-    <gxt.version>3.1.4</gxt.version>
+    <gxt.version>4.0.0-SNAPSHOT</gxt.version>
 
     <!-- GWT -->
     <gwt.version>2.7.0</gwt.version>
