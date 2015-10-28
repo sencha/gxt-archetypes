@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><archetype-descriptor xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="gxt-theme-40x" xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd">
+  <requiredProperties>
+    <requiredProperty key="module">
+      <defaultValue>Project</defaultValue>
+    </requiredProperty>
+  </requiredProperties>
+  <fileSets>
+    
+    <fileSet encoding="UTF-8" filtered="true">
+      <directory/>
+      <includes>
+        <include>.project</include>
+      </includes>
+    </fileSet>
+    
+  </fileSets>
+  <modules>
+    <module dir="theme" id="${rootArtifactId}-theme" name="${rootArtifactId}-theme">
+      <fileSets>
+        <fileSet encoding="UTF-8" filtered="true" packaged="true">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8" packaged="true">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.gss</include>
+            <include>**/*.png</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/main/files</directory>
+          <includes>
+            <include>**/*.svg</include>
+            <include>**/*.cssTemplate</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true">
+          <directory>src/main/resources</directory>
+          <includes>
+            <include>**/*.theme</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true" packaged="true">
+          <directory>src/test/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true">
+          <directory>bin</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true">
+          <directory>bin/src</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true">
+          <directory>bin/target</directory>
+          <includes>
+            <include>**/*.txt</include>
+            <include>**/*.xml</include>
+            <include>**/*.html</include>
+            <include>**/*.properties</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>bin</directory>
+          <includes>
+            <include>**/*.md</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>bin/src</directory>
+          <includes>
+            <include>**/*.svg</include>
+            <include>**/*.gss</include>
+            <include>**/*.png</include>
+            <include>**/*.theme</include>
+            <include>**/*.cssTemplate</include>
+            <include>**/*.class</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>bin/target</directory>
+          <includes>
+            <include>**/*.</include>
+            <include>**/*.svg</include>
+            <include>**/*.gif</include>
+            <include>**/*.gss</include>
+            <include>**/*.png</include>
+            <include>**/*.js</include>
+            <include>**/*.BSD</include>
+            <include>**/*.marker</include>
+            <include>**/*.coffee</include>
+            <include>**/*.md</include>
+            <include>**/*.MF</include>
+            <include>**/*.theme</include>
+            <include>**/*.jar</include>
+            <include>**/*.cssTemplate</include>
+            <include>**/*.class</include>
+          </includes>
+        </fileSet>
+        
+        
+        
+      </fileSets>
+    </module>
+    <module dir="application" id="${rootArtifactId}-application" name="${rootArtifactId}-application">
+      <fileSets>
+        <fileSet encoding="UTF-8" filtered="true" packaged="true">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true">
+          <directory>src/main/webapp</directory>
+          <includes>
+            <include>**/*.xml</include>
+            <include>**/*.html</include>
+            <include>**/*.properties</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/main/webapp</directory>
+          <includes>
+            <include>**/*.css</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true" packaged="true">
+          <directory>src/test/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true">
+          <directory>bin</directory>
+          <includes>
+            <include>**/*.xml</include>
+            <include>**/*.project</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true">
+          <directory>bin/src</directory>
+          <includes>
+            <include>**/*.xml</include>
+            <include>**/*.html</include>
+            <include>**/*.properties</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true">
+          <directory>bin/target</directory>
+          <includes>
+            <include>**/*.txt</include>
+            <include>**/*.xml</include>
+            <include>**/*.html</include>
+            <include>**/*.properties</include>
+          </includes>
+        </fileSet>
+        
+        
+        <fileSet encoding="UTF-8">
+          <directory>bin</directory>
+          <includes>
+            <include>**/*.sh</include>
+            <include>**/*.gitignore</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>bin/src</directory>
+          <includes>
+            <include>**/*.css</include>
+            <include>**/*.class</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>bin/target</directory>
+          <includes>
+            <include>**/*.</include>
+            <include>**/*.css</include>
+            <include>**/*.gif</include>
+            <include>**/*.png</include>
+            <include>**/*.symbolMap</include>
+            <include>**/*.js</include>
+            <include>**/*.war</include>
+            <include>**/*.MF</include>
+            <include>**/*.jar</include>
+            <include>**/*.class</include>
+          </includes>
+        </fileSet>
+        
+        
+        
+        <fileSet encoding="UTF-8">
+          <directory/>
+          <includes>
+            <include>.gitignore</include>
+            <include>test-archtype.sh</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+  </modules>
+</archetype-descriptor>

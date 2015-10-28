@@ -10,6 +10,9 @@ This is a very basic GXT with custom theme Archetype.
 
 * This project Project.gwt.xml module name is hard coded and will will not be changed from the parameters below at this time.
 
+
+### Using nix
+
 ```
 mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes \
 -DarchetypeRepository=https://oss.sonatype.org/content/repositories/snapshots \
@@ -17,5 +20,17 @@ mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes \
 -DarchetypeVersion=1.0.0-SNAPSHOT \
 -DgroupId=com.projectname.project \
 -DartifactId=new-project-name \
+-Dmodule=Project
+```
+
+### Using Windows
+
+```
+mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes ^
+-DarchetypeRepository=https://oss.sonatype.org/content/repositories/snapshots ^
+-DarchetypeArtifactId=gxt-theme-40x-archetype ^
+-DarchetypeVersion=1.0.0-SNAPSHOT ^
+-DgroupId=com.projectname.project ^
+-DartifactId=new-project-name ^
 -Dmodule=Project
 ```

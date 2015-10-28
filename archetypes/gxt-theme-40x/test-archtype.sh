@@ -12,4 +12,5 @@ mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes \
 -DarchetypeVersion=1.0-SNAPSHOT \
 -DgroupId=com.projectname.project \
 -DartifactId=new-project-name \
+-Dmodule=Project \
 -DinteractiveMode=false
