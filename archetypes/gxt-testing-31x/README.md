@@ -10,6 +10,8 @@ This is a very basic GXT with integration testing Archetype.
 
 * This project Project.gwt.xml module name is hard coded and will will not be changed from the parameters below at this time.
 
+### Using *nix
+
 ```
 mvn archetype:generate \
 -DarchetypeRepository=https://oss.sonatype.org/content/repositories/snapshots \
@@ -18,5 +20,18 @@ mvn archetype:generate \
 -DarchetypeVersion=1.0.0-SNAPSHOT \
 -DgroupId=com.projectname.project \
 -DartifactId=new-project-name \
+-Dmodule=Project
+```
+
+### Using Windows
+
+```
+mvn archetype:generate ^
+-DarchetypeRepository=https://oss.sonatype.org/content/repositories/snapshots ^
+-DarchetypeGroupId=com.sencha.gxt.archetypes ^
+-DarchetypeArtifactId=gxt-testing-31x-archetype ^
+-DarchetypeVersion=1.0.0-SNAPSHOT ^
+-DgroupId=com.projectname.project ^
+-DartifactId=new-project-name ^
 -Dmodule=Project
 ```
