@@ -23,6 +23,13 @@
             <include>**/*.java</include>
           </includes>
         </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/main/files</directory>
+          <includes>
+            <include>**/*.svg</include>
+            <include>**/*.cssTemplate</include>
+          </includes>
+        </fileSet>
         <fileSet encoding="UTF-8" filtered="true">
           <directory>src/main/resources</directory>
           <includes>

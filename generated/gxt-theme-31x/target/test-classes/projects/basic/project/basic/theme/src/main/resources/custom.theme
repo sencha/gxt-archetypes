@@ -1,6 +1,6 @@
 theme {
   name = "custom"
-  basePackage = "it.pkg"
+  basePackage = "it.pkg.theme.custom"
 
   headerText {
     color = "#ffffff"

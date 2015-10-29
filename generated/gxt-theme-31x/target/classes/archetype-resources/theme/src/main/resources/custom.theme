@@ -1,6 +1,6 @@
 theme {
   name = "custom"
-  basePackage = "${package}"
+  basePackage = "${package}.theme.custom"
 
   headerText {
     color = "#ffffff"

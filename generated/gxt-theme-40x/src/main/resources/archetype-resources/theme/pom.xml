@@ -183,13 +183,10 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
+                    <!-- Remove ignore and add an execute to turn on m2e execution -->
+                    <ignore />
                     <!-- https://wiki.eclipse.org/M2E_compatible_maven_plugins -->
-                    <execute>
-                      <!-- run on maven update -->
-                      <runOnConfiguration>true</runOnConfiguration>
-                      <!-- run on workspace build -->
-                      <!-- <runOnIncremental>true</runOnIncremental> -->
-                    </execute>
+                    <execute></execute>
                   </action>
                 </pluginExecution>
               </pluginExecutions>
