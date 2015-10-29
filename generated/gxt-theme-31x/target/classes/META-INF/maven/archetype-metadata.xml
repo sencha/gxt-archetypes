@@ -26,7 +26,8 @@
         <fileSet encoding="UTF-8">
           <directory>src/main/files</directory>
           <includes>
-            <include>**/*.ai</include>
+            <include>**/*.svg</include>
+            <include>**/*.cssTemplate</include>
           </includes>
         </fileSet>
         <fileSet encoding="UTF-8" filtered="true">
