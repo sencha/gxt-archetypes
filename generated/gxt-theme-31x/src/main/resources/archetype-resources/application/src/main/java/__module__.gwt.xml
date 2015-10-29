@@ -15,7 +15,7 @@
   <stylesheet src="reset.css" />
 
   <!-- GXT Theme -->
-  <inherits name="${package}.Theme" />
+  <inherits name="${package}.theme.custom.Theme" />
 
   <!-- Specify the app entry point class. -->
   <entry-point class='${package}.client.${module}EntryPoint' />
