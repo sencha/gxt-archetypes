@@ -1,36 +1,36 @@
- package tld.domain.project.client.application.login;
+package tld.domain.project.client.application.login;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.safehtml.shared.SimpleHtmlSanitizer;
-import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
+import com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer;
+import com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData;
 
 import tld.domain.project.client.application.Presenter;
 
-public class LoginView extends Composite {
-
-  private static Binder uiBinder = GWT.create(Binder.class);
-
-  interface Binder extends UiBinder<Widget, LoginView> {}
-  
-  @UiField
-  HTML name;
+public class LoginView implements IsWidget {
 
   private Presenter presenter;
 
-  public LoginView() {
-    initWidget(uiBinder.createAndBindUi(this));
-  }
+  private VerticalLayoutContainer widget;
 
   public void setPresenter(Presenter presenter) {
     this.presenter = presenter;
   }
-  
+
   public void start() {
-    
+
+  }
+
+  @Override
+  public Widget asWidget() {
+    if (widget == null) {
+      widget = new VerticalLayoutContainer();
+      
+      widget.add(new HTML("Login"), new VerticalLayoutData(1,1));
+    }
+
+    return widget;
   }
 
 }

@@ -3,25 +3,18 @@ package tld.domain.project.client;
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
-import com.google.gwt.user.client.ui.RootPanel;
+import com.google.web.bindery.event.shared.EventBus;
 
 import tld.domain.project.client.activity.ApplicationActivityMapper;
 import tld.domain.project.client.activity.ApplicationPlaceHistoryMapper;
-import tld.domain.project.client.application.MainLayout;
 import tld.domain.project.client.application.home.HomePlace;
 import tld.domain.project.client.application.login.LoginPlace;
 
 public class ClientFactory {
-
-  /**
-   * shell for the app - includes LoginWidget - processes the credentials
-   */
-  private MainLayout mainLayout = new MainLayout();
 
   /**
    * default start point in application - if nothing is in url
@@ -60,22 +53,22 @@ public class ClientFactory {
   private final PlaceController placeController = new PlaceController(eventBus);
 
   public ClientFactory() {
-    RootPanel.get().add(mainLayout);
-
-    activityManager.setDisplay(mainLayout.getContentPanel());
-
     // tell the historyMapper there are tokenizers (below) to use in here.
     historyMapper.setFactory(this);
 
     placeHistoryHandler = new PlaceHistoryHandler(historyMapper);
     placeHistoryHandler.register(placeController, eventBus, defaultPlace);
+  }
 
-    // the loginWidget needs all the stuff setup to fetch userData - inits
-    // credentials process
-    mainLayout.setClientFactory(this);
-
-    // Goes to the place represented on URL else default place
+  /**
+   * Goes to the place represented on URL else default place.
+   */
+  public void handleCurrentHistory() {
     placeHistoryHandler.handleCurrentHistory();
+  }
+  
+  public void getToken(Place place) {
+    historyMapper.getToken(place);
   }
 
   public EventBus getEventBus() {
