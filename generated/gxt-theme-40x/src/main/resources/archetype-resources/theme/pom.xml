@@ -207,6 +207,26 @@
                     <execute></execute>
                   </action>
                 </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <versionRange>[1.9.1,)</versionRange>
+                    <goals>
+                      <goal>add-source</goal>
+                      <goal>add-resource</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <execute>
+                      <!-- run on maven update -->
+                      <!-- <runOnConfiguration>true</runOnConfiguration> -->
+                      <!-- run on workspace build -->
+                      <runOnConfiguration>true</runOnConfiguration>
+                      <runOnIncremental>true</runOnIncremental>
+                    </execute>
+                  </action>
+                </pluginExecution>
               </pluginExecutions>
             </lifecycleMappingMetadata>
           </configuration>
