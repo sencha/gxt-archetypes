@@ -71,6 +71,7 @@
             <include>**/*.properties</include>
           </includes>
         </fileSet>
+        
         <fileSet encoding="UTF-8">
           <directory>bin</directory>
           <includes>
@@ -142,71 +143,9 @@
             <include>**/*.java</include>
           </includes>
         </fileSet>
-        <fileSet encoding="UTF-8" filtered="true">
-          <directory>bin</directory>
-          <includes>
-            <include>**/*.xml</include>
-            <include>**/*.project</include>
-          </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8" filtered="true">
-          <directory>bin/src</directory>
-          <includes>
-            <include>**/*.xml</include>
-            <include>**/*.html</include>
-            <include>**/*.properties</include>
-          </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8" filtered="true">
-          <directory>bin/target</directory>
-          <includes>
-            <include>**/*.txt</include>
-            <include>**/*.xml</include>
-            <include>**/*.html</include>
-            <include>**/*.properties</include>
-          </includes>
-        </fileSet>
-        
-        
-        <fileSet encoding="UTF-8">
-          <directory>bin</directory>
-          <includes>
-            <include>**/*.sh</include>
-            <include>**/*.gitignore</include>
-          </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-          <directory>bin/src</directory>
-          <includes>
-            <include>**/*.css</include>
-            <include>**/*.class</include>
-          </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-          <directory>bin/target</directory>
-          <includes>
-            <include>**/*.</include>
-            <include>**/*.css</include>
-            <include>**/*.gif</include>
-            <include>**/*.png</include>
-            <include>**/*.symbolMap</include>
-            <include>**/*.js</include>
-            <include>**/*.war</include>
-            <include>**/*.MF</include>
-            <include>**/*.jar</include>
-            <include>**/*.class</include>
-          </includes>
-        </fileSet>
         
         
         
-        <fileSet encoding="UTF-8">
-          <directory/>
-          <includes>
-            <include>.gitignore</include>
-            <include>test-archtype.sh</include>
-          </includes>
-        </fileSet>
       </fileSets>
     </module>
   </modules>
