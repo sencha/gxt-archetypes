@@ -90,7 +90,7 @@
                 <argument>-manifestFile</argument>
                 <argument>${project.build.directory}/snapshot.json</argument>
                 <argument>-out</argument>
-                <argument>${project.build.directory}/${project.build.finalName}-generatedtheme.jar</argument>
+                <argument>${project.build.directory}/${project.build.finalName}.jar</argument>
                 <argument>-imagePath</argument>
                 <argument>${project.basedir}/src/main/files/icons</argument>
                 <argument>-warDir</argument>
