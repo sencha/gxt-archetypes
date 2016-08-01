@@ -15,7 +15,7 @@
   <description>GXT Application Theme</description>
 
   <properties>
-    <theme.gen.directory>${project.basedir}/target/theme-gen</theme.gen.directory>
+    <theme.gen.directory>${project.basedir}/target/generated-sources</theme.gen.directory>
 
     <phantomjs.version>1.9.2</phantomjs.version>
     <bin>bin/phantomjs</bin>

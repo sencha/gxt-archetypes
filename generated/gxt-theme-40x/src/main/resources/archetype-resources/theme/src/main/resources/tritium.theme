@@ -306,6 +306,7 @@ theme {
       borderColor = "#d0d0d0"
       borderStyle = "solid"
       borderWidth = 1
+      dualListFieldIconColor = "#919191"
       emptyTextColor = "#a9a9a9"
       focusBorderColor = "#3892d3"
       height = 30
@@ -440,8 +441,8 @@ theme {
         style = "solid"
         top = 1
       }
-      collapseIconColor = tools.primaryColor
-      collapseOverIconColor = tools.primaryOverColor
+      collapseIconColor = "#919191"
+      collapseOverIconColor = "#3892d4"
       expandIconColor = collapseIconColor
       expandOverIconColor = collapseOverIconColor
       legendPadding {
@@ -512,7 +513,7 @@ theme {
       cellBackgroundColor = "#ffffff"
       cellBorderWidth = 1
       cellHBorderColor = "#e9e9e9"
-      cellLineHeight = "15px"
+      cellLineHeight = "17px"
       cellOverBackgroundColor = "#eaeff4"
       cellOverHBorderColor = "#dee3e8"
       cellOverHBorderStyle = "solid"
@@ -1210,13 +1211,13 @@ theme {
       }
     }
     tip {
-      backgroundColor = "#eaf3fa"
-      borderRadius = 3
+      backgroundColor = "#747474"
+      borderRadius = 2
       opacity = 1
       radiusMinusBorderWidth = util.radiusMinusBorderWidth(border, borderRadius)
       border {
         bottom = 1
-        color = "#e1e1e1"
+        color = "#747474"
         left = 1
         right = 1
         style = "solid"
@@ -1229,9 +1230,9 @@ theme {
         top = 0
       }
       headerText {
-        color = "#000000"
-        family = "Tahoma, Arial, Verdana, sans-serif"
-        size = "12px"
+        color = "#f0f0f0"
+        family = "'Open Sans','Helvetica Neue',helvetica,arial,verdana,sans-serif"
+        size = "13px"
         weight = "bold"
       }
       margin {
@@ -1247,10 +1248,10 @@ theme {
         top = 0
       }
       messageText {
-        color = "#000000"
-        family = "Tahoma, Arial, Verdana, sans-serif"
-        size = "12px"
-        weight = "normal"
+        color = "#f0f0f0"
+        family = "'Open Sans','Helvetica Neue',helvetica,arial,verdana,sans-serif"
+        size = "13px"
+        weight = "300"
       }
       padding {
         bottom = 3
@@ -1276,7 +1277,6 @@ theme {
         border = util.border('solid', '#e4e4e4', 1)
         borderRadius = 0
         firstIconColor = "#919191"
-        // focusBoxShadow = "#5fa2dd 0 1px 0px 0 inset, #5fa2dd 0 -1px 0px 0 inset, #5fa2dd -1px 0 0px 0 inset, #5fa2dd 1px 0 0px 0 inset"
         gradient = "#f6f6f6 0%, #f6f6f6 100%"
         largeFontSize = "16"
         largeLineHeight = "32"
@@ -1367,10 +1367,10 @@ theme {
         top = 0
       }
       nodePadding {
-        bottom = 0
+        bottom = 6
         left = 6
         right = 6
-        top = 2
+        top = 7
       }
       text {
         color = "#404040"
@@ -1423,3 +1423,4 @@ theme {
     weight = "bold"
   }
 }
+

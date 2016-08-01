@@ -134,7 +134,7 @@
       <scope>runtime</scope>
     </dependency>
 
-    <!-- Theme -->
+    <!-- Custom Theme Module -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>gxt-theme-40x-theme</artifactId>

@@ -11,7 +11,7 @@
 
   <properties>
     <!-- GXT -->
-    <gxt.version>4.0.0-SNAPSHOT</gxt.version>
+    <gxt.version>4.0.2</gxt.version>
 
     <!-- GWT -->
     <gwt.version>2.7.0</gwt.version>
@@ -105,8 +105,8 @@
 
       <!-- Commercial (with Support) -->
       <!-- <url>https://maven.sencha.com/repo/gxt-commercial-release</url> -->
-      <!-- <url>https://maven.sencha.com/repo/gxt-support-commercial-release</url> -->
-      <url>https://maven.sencha.com/repo/gxt-commercial-snapshot</url>
+      <url>https://maven.sencha.com/repo/gxt-support-commercial-release</url>
+      <!-- <url>https://maven.sencha.com/repo/gxt-commercial-snapshot</url> -->
 
       <!-- GPL -->
       <!-- <url>https://maven.sencha.com/repo/gxt-gpl-release</url> -->
@@ -143,10 +143,16 @@
       <artifactId>gxt-chart</artifactId>
       <version>${gxt.version}</version>
     </dependency>
-    <!-- GXT 3.1.0+ - Neptune Theme -->
+    <!-- Neptune Theme -->
     <dependency>
       <groupId>com.sencha.gxt</groupId>
       <artifactId>gxt-theme-neptune</artifactId>
+      <version>${gxt.version}</version>
+    </dependency>
+    <!-- Triton Theme -->
+    <dependency>
+      <groupId>com.sencha.gxt</groupId>
+      <artifactId>gxt-theme-triton</artifactId>
       <version>${gxt.version}</version>
     </dependency>
 

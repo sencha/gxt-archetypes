@@ -133,7 +133,7 @@
       <scope>runtime</scope>
     </dependency>
 
-    <!-- Theme -->
+    <!-- Custom Theme Module -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>${rootArtifactId}-theme</artifactId>
