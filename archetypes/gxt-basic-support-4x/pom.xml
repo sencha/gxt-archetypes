@@ -12,7 +12,7 @@
 
   <properties>
     <!-- GXT -->
-    <gxt.version>4.0.0-SNAPSHOT</gxt.version>
+    <gxt.version>4.0.2</gxt.version>
 
     <!-- GWT -->
     <gwt.version>2.7.0</gwt.version>
@@ -118,6 +118,19 @@
     </repository>
   </repositories>
 
+  <!-- GWT (BOM or Bill of Materials) -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.gwt</groupId>
+        <artifactId>gwt</artifactId>
+        <version>${gwt.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <!-- GXT -->
     <!-- http://docs.sencha.com/gxt/3.x/getting_started/maven/Maven.html -->
@@ -131,10 +144,16 @@
       <artifactId>gxt-chart</artifactId>
       <version>${gxt.version}</version>
     </dependency>
-    <!-- GXT 3.1.0+ - Neptune Theme -->
+    <!-- Neptune Theme -->
     <dependency>
       <groupId>com.sencha.gxt</groupId>
       <artifactId>gxt-theme-neptune</artifactId>
+      <version>${gxt.version}</version>
+    </dependency>
+    <!-- Triton Theme -->
+    <dependency>
+      <groupId>com.sencha.gxt</groupId>
+      <artifactId>gxt-theme-triton</artifactId>
       <version>${gxt.version}</version>
     </dependency>
 
@@ -142,12 +161,10 @@
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
-      <version>${gwt.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-codeserver</artifactId>
-      <version>${gwt.version}</version>
     </dependency>
 
     <!-- Testing -->

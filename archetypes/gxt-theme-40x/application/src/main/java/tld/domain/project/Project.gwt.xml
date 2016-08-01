@@ -12,6 +12,10 @@
   <stylesheet src="reset.css" />
 
   <!-- GXT Theme -->
+  <!-- <inherits name='com.sencha.gxt.theme.blue.Blue'/> -->
+  <!-- <inherits name='com.sencha.gxt.theme.gray.Gray' /> -->
+  <!-- <inherits name="com.sencha.gxt.theme.neptune.Theme" /> -->
+  <!-- <inherits name="com.sencha.gxt.theme.triton.Theme" /> -->
   <inherits name="tld.domain.project.theme.tritium.Theme" />
 
   <!-- Specify the app entry point class. -->
@@ -25,5 +29,13 @@
   <!-- <set-property name="gwt.logging.logLevel" value="INFO"/> -->
   <!-- <set-property name="gwt.logging.enabled" value="TRUE"/> -->  
   <!-- <set-property name="gxt.logging.enabled" value="true" />  -->
+  
+  <!-- Shrink the amount of permutations compiled -->
+  <collapse-property name="gxt.device" values="phone, tablet" />
+  <!-- <collapse-property name="gxt.theme" values="blue, gray" /> -->
+  <collapse-property name="gxt.user.agent" values="air, safari*, chrome*, gecko*, ie11" />
+  <collapse-property name="user.agent" values="safari*, gecko*" />
+  <collapse-property name="gxt.user.agent" values="ie8, ie9, ie10" />
+  <collapse-property name="user.agent" values="ie*" />
   
 </module>
