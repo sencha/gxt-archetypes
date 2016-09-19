@@ -138,33 +138,39 @@
       <groupId>com.sencha.gxt</groupId>
       <artifactId>gxt</artifactId>
       <version>${gxt.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.sencha.gxt</groupId>
       <artifactId>gxt-chart</artifactId>
       <version>${gxt.version}</version>
+      <scope>provided</scope>
     </dependency>
     <!-- Neptune Theme -->
     <dependency>
       <groupId>com.sencha.gxt</groupId>
       <artifactId>gxt-theme-neptune</artifactId>
       <version>${gxt.version}</version>
+      <scope>provided</scope>
     </dependency>
     <!-- Triton Theme -->
     <dependency>
       <groupId>com.sencha.gxt</groupId>
       <artifactId>gxt-theme-triton</artifactId>
       <version>${gxt.version}</version>
+      <scope>provided</scope>
     </dependency>
 
     <!-- GWT -->
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-codeserver</artifactId>
+      <scope>provided</scope>
     </dependency>
 
     <!-- Testing -->

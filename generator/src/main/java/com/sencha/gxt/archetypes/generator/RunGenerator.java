@@ -30,15 +30,18 @@ public class RunGenerator {
 
     // basic-support
     // projects.add("gxt-basic-support-3x");
-    projects.add("gxt-basic-support-4x");
+    // projects.add("gxt-basic-support-4x");
 
     // theme
     // projects.add("gxt-theme-31x");
-    projects.add("gxt-theme-40x");
+    // projects.add("gxt-theme-40x");
 
     // theme with ap
-    projects.add("gxt-theme-40x-ap");
-
+    // projects.add("gxt-theme-40x-ap");
+    
+    // GXT 5
+    projects.add("gxt-basic-support-5x");
+    
     GwtArchetypeGenerator generate = new GwtArchetypeGeneratorExt();
     generate.setProjects(projects);
     generate.setDeploy(true);
