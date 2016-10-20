@@ -34,14 +34,14 @@ public class RunGenerator {
 
     // theme
     // projects.add("gxt-theme-31x");
-    // projects.add("gxt-theme-40x");
 
-    // theme with ap
-    // projects.add("gxt-theme-40x-ap");
-    
+    // GXT 4
+    projects.add("gxt-theme-40x"); // with theme
+    projects.add("gxt-theme-40x-ap"); // with theme and ap
+
     // GXT 5
-    projects.add("gxt-basic-support-5x");
-    
+    // projects.add("gxt-basic-support-5x");
+
     GwtArchetypeGenerator generate = new GwtArchetypeGeneratorExt();
     generate.setProjects(projects);
     generate.setDeploy(true);
