@@ -25,17 +25,14 @@ public class RunGenerator {
 
   public void run() {
     List<String> projects = new ArrayList<String>();
-    // gpl
+
+    // GXT 3
     // projects.add("gxt-basic-public-3x");
-
-    // basic-support
     // projects.add("gxt-basic-support-3x");
-    // projects.add("gxt-basic-support-4x");
-
-    // theme
     // projects.add("gxt-theme-31x");
 
     // GXT 4
+    projects.add("gxt-basic-support-4x");
     projects.add("gxt-theme-40x"); // with theme
     projects.add("gxt-theme-40x-ap"); // with theme and ap
 
