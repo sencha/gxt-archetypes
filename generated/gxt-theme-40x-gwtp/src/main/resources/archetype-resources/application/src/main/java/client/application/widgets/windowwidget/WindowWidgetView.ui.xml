@@ -1,8 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
-<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" 
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
   xmlns:g="urn:import:com.google.gwt.user.client.ui"
   xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container" 
   xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
@@ -11,9 +10,9 @@
   xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button"
   xmlns:form='urn:import:com.sencha.gxt.widget.core.client.form' >
 
-  <gxt:Window>
+  <gxt:Window ui:field="window">
     <g:HTMLPanel>
-      Window Presenter
+      Window Widget
       
       <g:Label ui:field="name"/>
       <br/>

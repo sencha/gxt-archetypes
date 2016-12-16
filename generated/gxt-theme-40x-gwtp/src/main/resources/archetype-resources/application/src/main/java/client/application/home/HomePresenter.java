@@ -15,6 +15,7 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
 import ${package}.client.application.ApplicationPresenter;
+import ${package}.client.application.widgets.windowwidget.WindowWidgetPresenter;
 import ${package}.client.place.NameTokens;
 import ${package}.client.place.ParameterTokens;
 
@@ -29,19 +30,27 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
   }
 
   private PlaceManager placeManager;
+  private WindowWidgetPresenter windowWidgetPresenter;
 
   @Inject
-  public HomePresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager) {
+  public HomePresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager, 
+      WindowWidgetPresenter windowWidgetPresenter) {
     super(eventBus, view, proxy, ApplicationPresenter.SLOT_MAIN);
 
     this.placeManager = placeManager;
+    this.windowWidgetPresenter = windowWidgetPresenter;
 
     getView().setUiHandlers(this);
   }
 
   @Override
-  public void onOpenWindow(String name) {
-    displayWindow(name);
+  public void onOpenWindowPresenter(String name) {
+    displayWindowPresenter(name);
+  }
+  
+  @Override
+  public void onOpenWindowWidget(String name) {
+    windowWidgetPresenter.show(name);
   }
 
   @Override
@@ -54,7 +63,7 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
     placeManager.revealPlace(placeRequest);
   }
 
-  private void displayWindow(String name) {
+  private void displayWindowPresenter(String name) {
     PlaceRequest placeRequest = new PlaceRequest.Builder().nameToken(NameTokens.Window).with(ParameterTokens.name, name)
         .with(ParameterTokens.onHide, NameTokens.Home).build();
     placeManager.revealPlace(placeRequest);

@@ -19,6 +19,9 @@ import ${package}.client.application.ApplicationPresenter;
 import ${package}.client.place.NameTokens;
 import ${package}.client.place.ParameterTokens;
 
+/**
+ * Using a place to show a a window.
+ */
 public class WindowPresenter extends Presenter<WindowPresenter.MyView, WindowPresenter.MyProxy>
     implements WindowUiHandlers {
 
