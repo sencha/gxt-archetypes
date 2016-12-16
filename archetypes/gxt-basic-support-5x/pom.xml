@@ -15,7 +15,7 @@
     <gxt.version>5.0.0-SNAPSHOT</gxt.version>
 
     <!-- GWT -->
-    <gwt.version>2.8.0-rc2</gwt.version>
+    <gwt.version>2.8.0</gwt.version>
     <gwt.style>OBF</gwt.style>
 
     <!-- Maven -->
@@ -36,8 +36,9 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.0</version>
+        <version>3.6.0</version>
         <configuration>
+          <fork>true</fork>
           <source>1.8</source>
           <target>1.8</target>
         </configuration>

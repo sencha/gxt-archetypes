@@ -17,7 +17,7 @@
   <properties>
     <theme.gen.directory>${project.basedir}/target/generated-sources</theme.gen.directory>
 
-    <phantomjs.version>2.1.1</phantomjs.version>
+    <phantomjs.version>1.9.2</phantomjs.version>
     <bin>bin/phantomjs</bin>
   </properties>
 
@@ -95,8 +95,9 @@
                 <argument>${project.basedir}/src/main/files/icons</argument>
                 <argument>-warDir</argument>
                 <argument>${project.build.directory}/war</argument>
-                <argument>-slicedDisabled</argument> <!-- Triton doesn't have gradients -->
-                <argument>true</argument>
+                <!-- Comment out slicedDisabled to disable -->
+                <argument>-slicedDisabled</argument>
+                <argument>false</argument>
                 <argument>-sourcesOnly</argument>
                 <argument>true</argument>
                 <argument>-gwtXmlFilename</argument>
