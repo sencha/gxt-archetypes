@@ -12,11 +12,11 @@
 
   <properties>
     <!-- GXT -->
-    <gxt.version>4.0.0</gxt.version>
+    <gxt.version>4.0.2</gxt.version>
 
     <!-- GWT -->
     <gwt.version>2.8.0</gwt.version>
-    <gwt.maven.version>2.8.0-SNAPSHOT</gwt.maven.version>
+    <gwt.maven.version>2.8.0</gwt.maven.version>
     <gwt.style>OBF</gwt.style>
 
     <!-- Maven -->

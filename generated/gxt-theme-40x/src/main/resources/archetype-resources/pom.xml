@@ -14,7 +14,8 @@
     <gxt.version>4.0.2</gxt.version>
 
     <!-- GWT -->
-    <gwt.version>2.7.0</gwt.version>
+    <gwt.version>2.8.0</gwt.version>
+    <gwt.maven.version>2.8.0</gwt.maven.version>
     <gwt.style>OBF</gwt.style>
 
     <!-- Maven -->
@@ -29,8 +30,8 @@
         <version>3.5.1</version>
         <configuration>
           <fork>true</fork>
-          <source>1.7</source>
-          <target>1.7</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
     </plugins>
@@ -38,7 +39,7 @@
 
   <repositories>
     <repository>
-      <!-- http://docs.sencha.com/gxt/3.1/getting_started/maven/Maven.html -->
+      <!-- http://docs.sencha.com/gxt/latest/getting_started/maven/Maven.html -->
       <!-- ~/.m2/settings.xml add <server/> with the support portal credentials -->
       <id>sencha-gxt-repository</id>
       <name>Sencha GXT Repository</name>
@@ -60,7 +61,7 @@
   <!-- Maven Exec, it uses the theme builder -->
   <pluginRepositories>
     <pluginRepository>
-      <!-- http://docs.sencha.com/gxt/3.1/getting_started/maven/Maven.html -->
+      <!-- http://docs.sencha.com/gxt/latest/getting_started/maven/Maven.html -->
       <!-- ~/.m2/settings.xml add <server/> with the support portal credentials -->
       <id>sencha-gxt-repository</id>
       <name>Sencha GXT Repository</name>
