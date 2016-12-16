@@ -1,3 +1,7 @@
+#Incubating
+The archetype doesn't work yet, but it's in the works. The project does work. 
+
+
 #GXT Basic with Theme and GWTP
 This is a very basic GXT with custom theme and GWTP Archetype. 
 
