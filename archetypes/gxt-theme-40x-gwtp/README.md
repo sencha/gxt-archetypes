@@ -1,11 +1,11 @@
-#Incubating
-The archetype doesn't work yet, but it's in the works. The project does work. 
-
-
 #GXT Basic with Theme and GWTP
 This is a very basic GXT with custom theme and GWTP Archetype. 
 
-##Maven Archetype Usage
+## GWTP
+This project architecture uses [GWTP](http://dev.arcbees.com/gwtp/).  
+
+
+## Maven Archetype Usage
 
 1. Goto directory you want the project.
 2. Rename parameter below `com.projectname.project` to a package naming scheme you like.
@@ -13,7 +13,6 @@ This is a very basic GXT with custom theme and GWTP Archetype.
 4. Run the mvn archetype generator below.
 
 * This project Project.gwt.xml module name is hard coded and will will not be changed from the parameters below at this time.
-
 
 ### Using nix
 
@@ -38,3 +37,8 @@ mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes ^
 -DartifactId=new-project-name ^
 -Dmodule=Project
 ```
+
+## After Generation
+* After the project is download build the theme by running `mvn install`.
+* After the project is built, import it into the IDE. 
+
