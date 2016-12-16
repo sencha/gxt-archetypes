@@ -170,8 +170,8 @@
     <!-- Custom Theme Module -->
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>gxt-theme-40x-theme</artifactId>
-      <version>${project.version}</version>
+      <artifactId>${rootArtifactId}-theme</artifactId>
+      <version>${version}</version>
       <scope>provided</scope>
     </dependency>
 
