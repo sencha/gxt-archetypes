@@ -1,3 +1,6 @@
+#Incubating
+This project is not finished yet. 
+
 #GXT Basic with with MVP4G Theme
 This is a very basic GXT with custom theme and MVP4G Archetype. 
 
