@@ -10,7 +10,7 @@
 
   <gxt:Window>
     <g:HTMLPanel>
-      Window
+      Window Presenter
       
       <g:Label ui:field="name"/>
       <br/>

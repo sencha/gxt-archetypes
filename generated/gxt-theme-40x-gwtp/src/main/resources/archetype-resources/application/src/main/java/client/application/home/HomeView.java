@@ -27,21 +27,32 @@ public class HomeView extends ViewWithUiHandlers<HomeUiHandlers> implements Home
     initWidget(uiBinder.createAndBindUi(this));
   }
 
-  @UiHandler("buttonOpenWindow")
-  public void onOpenWindow(SelectEvent event) {
-    GWT.log("buttonOpenWindow selected");
+  @UiHandler("buttonOpenWindowPresenter")
+  public void onOpenWindowPresenter(SelectEvent event) {
+    GWT.log("buttonOpenWindowPresenter selected");
 
-    // Have the presenter take over
-    String name = this.name.getCurrentValue();
-    if (name == null || name.isEmpty()) {
-      name = "Nothing Entered into the TextField";
-    }
-    getUiHandlers().onOpenWindow(name);
+    getUiHandlers().onOpenWindowPresenter(getName());
+  }
+
+  @UiHandler("buttonOpenWindowWidget")
+  public void onOpenWindowWidget(SelectEvent event) {
+    GWT.log("buttonOpenWindowWidget selected");
+
+    getUiHandlers().onOpenWindowWidget(getName());
   }
 
   @UiHandler("buttonOpenGrid")
   public void onOpenGrid(SelectEvent event) {
     getUiHandlers().onOpenGrid();
+  }
+
+  private String getName() {
+    // Have the presenter take over
+    String name = this.name.getCurrentValue();
+    if (name == null || name.isEmpty()) {
+      name = "Nothing Entered into the TextField";
+    }
+    return name;
   }
 
 }

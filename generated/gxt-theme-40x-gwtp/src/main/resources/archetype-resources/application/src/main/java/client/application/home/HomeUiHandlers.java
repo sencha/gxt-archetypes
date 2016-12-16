@@ -7,7 +7,9 @@ import com.gwtplatform.mvp.client.UiHandlers;
 
 interface HomeUiHandlers extends UiHandlers {
 
-  void onOpenWindow(String name);
+  void onOpenWindowPresenter(String name);
+  
+  void onOpenWindowWidget(String name);
 
   void onOpenGrid();
 

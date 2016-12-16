@@ -6,6 +6,7 @@ import com.gwtplatform.mvp.client.gin.DefaultModule;
 import tld.domain.project.client.application.ApplicationModule;
 import tld.domain.project.client.application.grid.GridModule;
 import tld.domain.project.client.application.home.HomeModule;
+import tld.domain.project.client.application.widgets.WidgetsModule;
 import tld.domain.project.client.application.window.WindowModule;
 import tld.domain.project.client.place.NameTokens;
 import tld.domain.project.client.resources.ResourceLoader;
@@ -20,6 +21,7 @@ public class ClientModule extends AbstractPresenterModule {
     install(new HomeModule());
     install(new WindowModule());
     install(new GridModule());
+    install(new WidgetsModule());
 
     bind(ResourceLoader.class).asEagerSingleton();
   }
