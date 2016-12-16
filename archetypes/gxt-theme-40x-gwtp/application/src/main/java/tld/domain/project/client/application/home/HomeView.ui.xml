@@ -11,13 +11,16 @@
   <container:SimpleContainer>
     <g:HTMLPanel>
       <br/>
+      
       <div style="display:flex">
-        &nbsp;<button:TextButton ui:field="buttonOpenWindow" text="Go to Window"/>
+        &nbsp;<button:TextButton ui:field="buttonOpenWindowPresenter" text="Go to Window Presenter Place"/>
+        &nbsp;<button:TextButton ui:field="buttonOpenWindowWidget" text="Show the Window Widget"/>
         &nbsp;<form:TextField ui:field="name" emptyText="Name"/>
       </div>
       <br/>
+      
       <div>
-        &nbsp;<button:TextButton ui:field="buttonOpenGrid" text="Go to Grid"/>
+        &nbsp;<button:TextButton ui:field="buttonOpenGrid" text="Go to Grid Presenter"/>
       </div>
       
       <br/>

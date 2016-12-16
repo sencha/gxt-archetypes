@@ -142,7 +142,7 @@
     <!-- Custom Theme Module -->
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>gxt-theme-40x-theme</artifactId>
+      <artifactId>gxt-theme-40x-mvp4g-theme</artifactId>
       <version>${project.version}</version>
       <scope>provided</scope>
     </dependency>

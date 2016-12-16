@@ -16,6 +16,9 @@ import tld.domain.project.client.application.ApplicationPresenter;
 import tld.domain.project.client.place.NameTokens;
 import tld.domain.project.client.place.ParameterTokens;
 
+/**
+ * Using a place to show a a window.
+ */
 public class WindowPresenter extends Presenter<WindowPresenter.MyView, WindowPresenter.MyProxy>
     implements WindowUiHandlers {
 
