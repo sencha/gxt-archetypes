@@ -17,7 +17,7 @@
   <properties>
     <theme.gen.directory>${project.basedir}/target/theme-gen</theme.gen.directory>
 
-    <phantomjs.version>1.9.2</phantomjs.version>
+    <phantomjs.version>2.1.1</phantomjs.version>
     <bin>bin/phantomjs</bin>
   </properties>
 
@@ -55,7 +55,7 @@
                 <artifactItem>
                   <groupId>com.github.klieber</groupId>
                   <artifactId>phantomjs</artifactId>
-                  <version>1.9.2</version>
+                  <version>2.1.1</version>
                   <classifier>${platform}</classifier>
                   <overWrite>true</overWrite>
                   <type>zip</type>

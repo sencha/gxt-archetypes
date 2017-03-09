@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.sencha.gxt.archetypes</groupId>
-  <artifactId>gxt-archetypes-generator</artifactId>
+  <artifactId>gxt-archetypes-generatorr</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>GXT Archetypes Generator</name>
