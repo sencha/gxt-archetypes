@@ -16,7 +16,7 @@
   <properties>
     <theme.gen.directory>${project.basedir}/target/generated-sources</theme.gen.directory>
 
-    <phantomjs.version>1.9.2</phantomjs.version>
+    <phantomjs.version>2.1.1</phantomjs.version>
     <bin>bin/phantomjs</bin>
   </properties>
 

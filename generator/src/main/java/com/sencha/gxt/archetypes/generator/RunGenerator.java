@@ -33,9 +33,8 @@ public class RunGenerator {
 
     // GXT 4
     // projects.add("gxt-basic-support-4x");
-    // projects.add("gxt-theme-40x"); // with theme
-    //projects.add("gxt-theme-40x-ap"); // with theme and ap
-
+    projects.add("gxt-theme-40x"); // with theme
+    projects.add("gxt-theme-40x-ap"); // with theme and ap
     projects.add("gxt-theme-40x-gwtp");
 
     // GXT 5
