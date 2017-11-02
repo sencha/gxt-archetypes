@@ -75,7 +75,7 @@ public class ProjectEntryPoint implements EntryPoint {
 
     Radio radio = new Radio();
     final TextArea textArea = new TextArea();
-    textArea.addStyleName("flow");
+    textArea.addStyleName("flow"); 
 
     PageTemplate template = GWT.create(PageTemplate.class);
     HtmlLayoutContainer container = new HtmlLayoutContainer(template.getPageTemplate());
