@@ -92,15 +92,15 @@
           <directory>bin/target</directory>
           <includes>
             <include>**/*.</include>
-            <include>**/*.svg</include>
             <include>**/*.gif</include>
+            <include>**/*.svg</include>
             <include>**/*.gss</include>
             <include>**/*.png</include>
             <include>**/*.js</include>
             <include>**/*.BSD</include>
             <include>**/*.marker</include>
-            <include>**/*.coffee</include>
             <include>**/*.md</include>
+            <include>**/*.coffee</include>
             <include>**/*.MF</include>
             <include>**/*.theme</include>
             <include>**/*.jar</include>
@@ -190,9 +190,9 @@
             <include>**/*.gif</include>
             <include>**/*.png</include>
             <include>**/*.symbolMap</include>
-            <include>**/*.js</include>
             <include>**/*.war</include>
             <include>**/*.MF</include>
+            <include>**/*.js</include>
             <include>**/*.jar</include>
             <include>**/*.class</include>
           </includes>
