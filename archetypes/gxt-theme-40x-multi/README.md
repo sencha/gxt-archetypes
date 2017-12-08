@@ -1,7 +1,7 @@
-#GXT Basic with Theme
+# GXT Basic with Theme
 This is a very basic GXT with custom theme Archetype. 
 
-##Maven Archetype Usage
+## Maven Archetype Usage
 
 1. Goto directory you want the project.
 2. Rename parameter below `com.projectname.project` to a package naming scheme you like.
