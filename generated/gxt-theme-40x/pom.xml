@@ -4,7 +4,7 @@
 
   <groupId>com.sencha.gxt.archetypes</groupId>
   <artifactId>gxt-theme-40x-archetype</artifactId>
-  <version>1.0.2-SNAPSHOT</version>
+  <version>1.0.3-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>gxt-theme-40x-archetype</name>
@@ -44,7 +44,6 @@
     <connection>scm:git:git://github.com:sencha/gxt-archetypes.git</connection>
     <developerConnection>scm:git:git@github.com:sencha/gxt-archetypes.git</developerConnection>
     <url>https://github.com/sencha/gxt-archetypes</url>
-    <tag>HEAD</tag>
   </scm>
 
   <!-- Used for publishing Archetype -->
@@ -101,20 +100,6 @@
               </execution>
             </executions>
           </plugin>
-
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <version>2.10.4</version>
-            <configuration>
-              <encoding>UTF-8</encoding>
-            </configuration>
-            <executions>
-              <execution>
-                <id>attach-javadoc</id>
-              </execution>
-            </executions>
-          </plugin>
         </plugins>
       </build>
 
@@ -159,5 +144,5 @@
         </plugins>
       </build>
     </profile>
-  </profiles>  
+  </profiles>
 </project>
