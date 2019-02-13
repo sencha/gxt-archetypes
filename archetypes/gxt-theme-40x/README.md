@@ -1,4 +1,4 @@
-# GXT Basic with Theme
+# Basic GXT 4.x Template with Custom Theme
 This is a very basic GXT with custom theme Archetype. 
 
 ## Status
