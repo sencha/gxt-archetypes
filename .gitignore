@@ -14,4 +14,4 @@ chromedriver.log
 .DS_Store
 war
 *.releaseBackup
-generated/**
+#generated/**, maven release has to use this directory
