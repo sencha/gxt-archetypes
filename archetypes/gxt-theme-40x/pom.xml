@@ -5,7 +5,7 @@
 
   <groupId>com.sencha.gxt.archetypes</groupId>
   <artifactId>gxt-theme-40x</artifactId>
-  <version>1.0.3-SNAPSHOT</version>
+  <version>1.0.4-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>gxt-theme-40x</name>
   <description>GXT project with custom theme setup</description>
@@ -151,7 +151,7 @@
             <version>1.6.7</version>
             <extensions>true</extensions>
             <configuration>
-              <serverId>ossrh</serverId>
+              <serverId>sonatype-nexus-staging</serverId>
               <nexusUrl>https://oss.sonatype.org/</nexusUrl>
               <autoReleaseAfterClose>true</autoReleaseAfterClose>
             </configuration>
