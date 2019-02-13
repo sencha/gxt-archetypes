@@ -6,9 +6,10 @@
   <groupId>com.sencha.gxt.archetypes</groupId>
   <artifactId>gxt-basic-support-4x</artifactId>
   <packaging>war</packaging>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.3-SNAPSHOT</version>
   <name>gxt-basic-support-4x</name>
   <description>Very basic GXT maven setup</description>
+  <url>https://github.com/sencha/gxt-archetypes</url>
 
   <properties>
     <!-- GXT -->
@@ -23,6 +24,41 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
   </properties>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:git://github.com:sencha/gxt-archetypes.git</connection>
+    <developerConnection>scm:git:git@github.com:sencha/gxt-archetypes.git</developerConnection>
+    <url>https://github.com/sencha/gxt-archetypes</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <organization>
+    <name>Sencha</name>
+    <url>https://sencha.com</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>sencha</id>
+      <name>Sencha, Inc.</name>
+      <email>info@sencha.com</email>
+      <organization>Sencha, Inc.</organization>
+      <organizationUrl>https://sencha.com</organizationUrl>
+    </developer>
+  </developers>
+
+  <issueManagement>
+    <url>https://github.com/sencha/gxt-archetypes/issues</url>
+    <system>Github Issues</system>
+  </issueManagement>
 
   <build>
     <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
