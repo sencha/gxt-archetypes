@@ -5,7 +5,7 @@
 
   <groupId>com.sencha.gxt.archetypes</groupId>
   <artifactId>gxt-theme-40x</artifactId>
-  <version>1.0.2-SNAPSHOT</version>
+  <version>1.0.3-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>gxt-theme-40x</name>
   <description>GXT project with custom theme setup</description>
@@ -167,20 +167,6 @@
                 <goals>
                   <goal>jar</goal>
                 </goals>
-              </execution>
-            </executions>
-          </plugin>
-
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <version>2.10.4</version>
-            <configuration>
-              <encoding>UTF-8</encoding>
-            </configuration>
-            <executions>
-              <execution>
-                <id>attach-javadoc</id>
               </execution>
             </executions>
           </plugin>
