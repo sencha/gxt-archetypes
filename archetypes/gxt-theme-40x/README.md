@@ -1,7 +1,11 @@
-#GXT Basic with Theme
-This is a very basic GXT with custom theme Archetype. 
+# Basic GXT 4.x Template with Custom Theme
+This is a very basic GXT with custom theme Archetype. The theme is a copy of Triton. 
 
-##Maven Archetype Usage
+## Status
+
+* Released to Maven Central
+
+## Maven Archetype Usage
 
 1. Goto directory you want the project.
 2. Rename parameter below `com.projectname.project` to a package naming scheme you like.
@@ -11,13 +15,11 @@ This is a very basic GXT with custom theme Archetype.
 * This project Project.gwt.xml module name is hard coded and will will not be changed from the parameters below at this time.
 
 
-### Using nix
+### Using *nix
 
 ```
 mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes \
--DarchetypeRepository=https://oss.sonatype.org/content/repositories/snapshots \
 -DarchetypeArtifactId=gxt-theme-40x-archetype \
--DarchetypeVersion=1.0.0-SNAPSHOT \
 -DgroupId=com.projectname.project \
 -DartifactId=new-project-name \
 -Dmodule=Project
@@ -27,9 +29,7 @@ mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes \
 
 ```
 mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes ^
--DarchetypeRepository=https://oss.sonatype.org/content/repositories/snapshots ^
 -DarchetypeArtifactId=gxt-theme-40x-archetype ^
--DarchetypeVersion=1.0.0-SNAPSHOT ^
 -DgroupId=com.projectname.project ^
 -DartifactId=new-project-name ^
 -Dmodule=Project
