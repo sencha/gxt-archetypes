@@ -1,5 +1,5 @@
 # Basic GXT 4.x Template with Custom Theme
-This is a very basic GXT with custom theme Archetype. 
+This is a very basic GXT with custom theme Archetype. The theme is a copy of Triton. 
 
 ## Status
 
