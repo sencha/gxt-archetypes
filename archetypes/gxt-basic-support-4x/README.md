@@ -1,7 +1,7 @@
-#GXT Basic Archetype
+# GXT Basic Archetype
 This is a very basic GXT Archetype. 
 
-##Maven Archetype Usage
+## Maven Archetype Usage
 
 1. Goto directory you want the project.
 2. Rename parameter below `com.projectname.project` to a package naming scheme you like.
@@ -13,9 +13,7 @@ This is a very basic GXT Archetype.
 
 ```
 mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes \
--DarchetypeRepository=https://oss.sonatype.org/content/repositories/snapshots \
 -DarchetypeArtifactId=gxt-basic-support-4x-archetype \
--DarchetypeVersion=1.0.0-SNAPSHOT \
 -DgroupId=com.projectname.project \
 -DartifactId=new-project-name \
 -Dmodule=Project
@@ -25,9 +23,7 @@ mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes \
 
 ```
 mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes ^
--DarchetypeRepository=https://oss.sonatype.org/content/repositories/snapshots ^
 -DarchetypeArtifactId=gxt-basic-support-4x-archetype ^
--DarchetypeVersion=1.0.0-SNAPSHOT ^
 -DgroupId=com.projectname.project ^
 -DartifactId=new-project-name ^
 -Dmodule=Project
