@@ -5,7 +5,7 @@
 
   <groupId>com.sencha.gxt.archetypes</groupId>
   <artifactId>gxt-theme-40x</artifactId>
-  <version>1.0.4-SNAPSHOT</version>
+  <version>1.0.5-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>gxt-theme-40x</name>
   <description>GXT project with custom theme setup</description>
@@ -38,7 +38,27 @@
     <url>https://github.com/sencha/gxt-archetypes</url>
     <tag>HEAD</tag>
   </scm>
-  
+
+  <organization>
+    <name>Sencha</name>
+    <url>https://sencha.com</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>sencha</id>
+      <name>Sencha, Inc.</name>
+      <email>info@sencha.com</email>
+      <organization>Sencha, Inc.</organization>
+      <organizationUrl>https://sencha.com</organizationUrl>
+    </developer>
+  </developers>
+
+  <issueManagement>
+    <url>https://github.com/sencha/gxt-archetypes/issues</url>
+    <system>Github Issues</system>
+  </issueManagement>
+
   <modules>
     <module>theme</module>
     <module>application</module>
@@ -123,7 +143,6 @@
   <profiles>
     <profile>
       <id>publish</id>
-
       <build>
         <plugins>
           <plugin>
@@ -170,33 +189,7 @@
               </execution>
             </executions>
           </plugin>
-        </plugins>
-      </build>
 
-      <distributionManagement>
-        <snapshotRepository>
-          <id>sonatype-nexus-snapshots</id>
-          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-          <id>sonatype-nexus-staging</id>
-          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-      </distributionManagement>
-
-    </profile>
-
-    <!-- GPG Signature on release -->
-    <profile>
-      <id>release-sign-artifacts</id>
-      <activation>
-        <property>
-          <name>performRelease</name>
-          <value>true</value>
-        </property>
-      </activation>
-      <build>
-        <plugins>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
@@ -213,6 +206,18 @@
           </plugin>
         </plugins>
       </build>
+
+      <distributionManagement>
+        <snapshotRepository>
+          <id>sonatype-nexus-snapshots</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+          <id>sonatype-nexus-staging</id>
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+      </distributionManagement>
+
     </profile>
   </profiles>
 </project>
