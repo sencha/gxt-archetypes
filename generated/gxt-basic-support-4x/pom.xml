@@ -4,7 +4,7 @@
 
   <groupId>com.sencha.gxt.archetypes</groupId>
   <artifactId>gxt-basic-support-4x-archetype</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>gxt-basic-support-4x-archetype</name>
@@ -54,7 +54,7 @@
     <connection>scm:git:git://github.com:sencha/gxt-archetypes.git</connection>
     <developerConnection>scm:git:git@github.com:sencha/gxt-archetypes.git</developerConnection>
     <url>https://github.com/sencha/gxt-archetypes</url>
-    <tag>gxt-basic-support-4x-archetype-1.0.2</tag>
+    <tag>HEAD</tag>
   </scm>
 
 
