@@ -40,4 +40,8 @@
   <collapse-property name="gxt.user.agent" values="ie8, ie9, ie10" />
   <collapse-property name="user.agent" values="ie*" />
   
+  
+  <!-- GXT test driver -->
+  <inherits name="org.senchalabs.gwt.gwtdriver.gxt.TestableGXT" />
+  
 </module>

@@ -8,19 +8,35 @@
   <packaging>pom</packaging>
   <name>${artifactId}</name>
   <description>GXT project with custom theme setup</description>
+  <url>https://github.com/sencha/gxt-archetypes</url>
 
   <properties>
     <!-- GXT -->
-    <gxt.version>4.0.2</gxt.version>
+    <gxt.version>4.0.3</gxt.version>
 
     <!-- GWT -->
-    <gwt.version>2.8.0</gwt.version>
-    <gwt.maven.version>2.8.0</gwt.maven.version>
+    <gwt.version>2.8.2</gwt.version>
+    <gwt.maven.version>2.8.2</gwt.maven.version>
     <gwt.style>OBF</gwt.style>
 
     <!-- Maven -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git@github.com:sencha/gxt-archetypes.git</connection>
+    <developerConnection>git@github.com:sencha/gxt-archetypes.git</developerConnection>
+    <url>https://github.com/sencha/gxt-archetypes</url>
+    <tag>HEAD</tag>
+  </scm>
 
   <build>
     <plugins>
@@ -34,6 +50,7 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+
     </plugins>
   </build>
 
@@ -55,6 +72,11 @@
 
       <!-- GPL with Support -->
       <!-- <url>https://maven.sencha.com/repo/gxt-support-gpl-release</url> -->
+    </repository>
+    <repository>
+      <id>archetype</id>
+      <name>Sencha GXT Archetypes</name>
+      <url>https://maven.sencha.com/repo/gxt-gpl-release/</url>
     </repository>
   </repositories>
 
@@ -88,4 +110,117 @@
     </pluginRepository>
   </pluginRepositories>
 
+  <distributionManagement>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+
+  <!-- Used for publishing Archetype -->
+  <!-- 1. mvn clean -->
+  <!-- 2. mvn release:prepare "-Dgpg.passphrase=XXXXXX" -DpushChanges=false -->
+  <!-- 3. mvn release:perform "-Dgpg.passphrase=XXXXXX" -->
+  <profiles>
+    <profile>
+      <id>publish</id>
+
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-release-plugin</artifactId>
+            <version>2.5.3</version>
+            <configuration>
+              <localCheckout>true</localCheckout>
+              <pushChanges>false</pushChanges>
+              <mavenExecutorId>forked-path</mavenExecutorId>
+              <arguments>-Dgpg.passphrase=${gpg.passphrase}</arguments>
+            </configuration>
+            <dependencies>
+              <dependency>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-provider-gitexe</artifactId>
+                <version>1.9.5</version>
+              </dependency>
+            </dependencies>
+          </plugin>
+
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.7</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>ossrh</serverId>
+              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>true</autoReleaseAfterClose>
+            </configuration>
+          </plugin>
+
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>3.0.1</version>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>2.10.4</version>
+            <configuration>
+              <encoding>UTF-8</encoding>
+            </configuration>
+            <executions>
+              <execution>
+                <id>attach-javadoc</id>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+
+    </profile>
+
+    <!-- GPG Signature on release -->
+    <profile>
+      <id>release-sign-artifacts</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
