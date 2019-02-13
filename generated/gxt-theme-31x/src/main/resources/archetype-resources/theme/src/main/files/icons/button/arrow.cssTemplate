@@ -1,4 +1,0 @@
-
-polyline {
-  fill: <%= config.get('theme.details.button.arrowColor').resolveString() %>;;
-}

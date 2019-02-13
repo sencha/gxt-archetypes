@@ -1,4 +1,0 @@
-
-* {
-  fill: <%= config.get('theme.details.datePicker.headerText.color').resolveString() %>;
-}
