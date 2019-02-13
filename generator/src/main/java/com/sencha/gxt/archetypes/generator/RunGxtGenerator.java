@@ -32,8 +32,8 @@ public class RunGxtGenerator {
     // projects.add("gxt-theme-31x");
 
     // GXT 4
-    //projects.add("gxt-basic-support-4x"); // updated to 4.0.3
-    projects.add("gxt-theme-40x"); // updated to 4.0.3
+    projects.add("gxt-basic-support-4x"); // updated to 4.0.3
+    // projects.add("gxt-theme-40x"); // updated to 4.0.3 & released to maven central
     
     // projects.add("gxt-theme-40x-ap"); // with theme and ap
     // projects.add("gxt-theme-40x-gwtp"); // with theme
