@@ -14,3 +14,4 @@ chromedriver.log
 .DS_Store
 war
 *.releaseBackup
+generated/**
