@@ -18,7 +18,7 @@
   <!-- <inherits name='com.sencha.gxt.theme.blue.Blue'/> -->
   <!-- <inherits name='com.sencha.gxt.theme.gray.Gray' /> -->
   <!-- <inherits name="com.sencha.gxt.theme.neptune.Theme" /> -->
-  <!-- <inherits name="com.sencha.gxt.theme.triton.Theme" /> -->
+  <!-- <inherits name="com.sencha.gxt.theme.tritium.Theme" /> -->
   <inherits name="${package}.theme.tritium.Theme" />
 
   <!-- Specify the app entry point class. -->

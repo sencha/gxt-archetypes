@@ -120,11 +120,12 @@
       <artifactId>gwt-dev</artifactId>
       <scope>provided</scope>
     </dependency>
-<dependency>
-    <groupId>asm</groupId>
-    <artifactId>asm</artifactId>
-    <version>3.3.1</version>
-</dependency>
+    <dependency>
+      <groupId>asm</groupId>
+      <artifactId>asm</artifactId>
+      <version>3.3.1</version>
+    </dependency>
+    
     <!-- Used with Super Dev Mode -->
     <dependency>
       <groupId>com.google.gwt</groupId>

@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-
   <groupId>com.sencha.gxt.archetypes</groupId>
   <artifactId>gxt-theme-40x-archetype</artifactId>
   <version>1.0.2-SNAPSHOT</version>
@@ -42,18 +41,16 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git@github.com:sencha/gxt-archetypes.git</connection>
+    <connection>scm:git:git://github.com:sencha/gxt-archetypes.git</connection>
     <developerConnection>scm:git:git@github.com:sencha/gxt-archetypes.git</developerConnection>
     <url>https://github.com/sencha/gxt-archetypes</url>
     <tag>HEAD</tag>
   </scm>
 
-<!-- Used for publishing Archetype -->
-  <!-- 
-  1. mvn clean
-  2. mvn release:prepare "-Dgpg.passphrase=XXXXXX"
-  3. mvn release:perform
-  -->
+  <!-- Used for publishing Archetype -->
+  <!-- 1. mvn clean -->
+  <!-- 2. mvn release:prepare "-Dgpg.passphrase=XXXXXX" -DpushChanges=false -Ppublish -->
+  <!-- 3. mvn release:perform "-Dgpg.passphrase=XXXXXX" -Ppublish -->
   <profiles>
     <profile>
       <id>publish</id>
@@ -123,14 +120,15 @@
 
       <distributionManagement>
         <snapshotRepository>
-          <id>ossrh</id>
+          <id>sonatype-nexus-snapshots</id>
           <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
-          <id>ossrh</id>
+          <id>sonatype-nexus-staging</id>
           <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
       </distributionManagement>
+
     </profile>
 
     <!-- GPG Signature on release -->
@@ -161,6 +159,5 @@
         </plugins>
       </build>
     </profile>
-  </profiles>
-
+  </profiles>  
 </project>

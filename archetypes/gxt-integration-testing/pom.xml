@@ -30,7 +30,7 @@
           <target>1.8</target>
         </configuration>
       </plugin>
-      
+
       <!-- Integration testing which runs classes *TestInt.java -->
       <!-- run 'mvn integration-test -Pintegration-test' -->
       <plugin>
@@ -131,15 +131,14 @@
       </build>
     </profile>
   </profiles>
-  
+
   <repositories>
     <repository>
-        <id>sonatype.snapshots</id>
-        <name>Sonatype snapshot repository</name>
-        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        <layout>default</layout>
+      <id>archetype</id>
+      <name>Sencha GXT Archetypes</name>
+      <url>https://maven.sencha.com/repo/gxt-gpl-release/</url>
     </repository>
-</repositories>
+  </repositories>
 
   <dependencies>
     <dependency>
@@ -148,7 +147,7 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    
+
     <dependency>
       <groupId>org.senchalabs.gwt</groupId>
       <artifactId>gwt-driver</artifactId>
@@ -179,7 +178,7 @@
       <artifactId>gxt-chart</artifactId>
       <version>${gxt.version}</version>
     </dependency>
-    
+
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>

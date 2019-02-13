@@ -1,8 +1,8 @@
 theme {
   name = "tritium"
   basePackage = "tld.domain.project.theme.tritium"
-  
-  borderColor = "#157FCC"
+    
+  borderColor = "#157FCC"  
   panelBackgroundColor = "#ffffff"
   details {
     backgroundColor = "#ffffff"
