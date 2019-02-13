@@ -20,7 +20,6 @@ This is a very basic GXT with custom theme Archetype. The theme is a copy of Tri
 ```
 mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes \
 -DarchetypeArtifactId=gxt-theme-40x-archetype \
--DarchetypeVersion=1.0.4-SNAPSHOT \
 -DgroupId=com.projectname.project \
 -DartifactId=new-project-name \
 -Dmodule=Project
@@ -31,7 +30,6 @@ mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes \
 ```
 mvn archetype:generate -DarchetypeGroupId=com.sencha.gxt.archetypes ^
 -DarchetypeArtifactId=gxt-theme-40x-archetype ^
--DarchetypeVersion=1.0.4-SNAPSHOT ^
 -DgroupId=com.projectname.project ^
 -DartifactId=new-project-name ^
 -Dmodule=Project
