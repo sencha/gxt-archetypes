@@ -6,7 +6,7 @@
   <groupId>com.sencha.gxt.archetypes</groupId>
   <artifactId>gxt-basic-support-4x</artifactId>
   <packaging>war</packaging>
-  <version>1.0.2-SNAPSHOT</version>
+  <version>1.0.3-SNAPSHOT</version>
   <name>gxt-basic-support-4x</name>
   <description>Very basic GXT maven setup</description>
   <url>https://github.com/sencha/gxt-archetypes</url>
